@@ -12,7 +12,7 @@ export default function useResource() {
       return;
     }
     try {
-      const response = await fetch(`${apiUrl}create/`, config());
+      const response = await fetch(apiUrl, config());
       const responseJSON = await response.json();
       return responseJSON;
     } catch (err) {
@@ -24,7 +24,7 @@ export default function useResource() {
     try {
       const options = config();
       (options.method = "POST"), (options.body = JSON.stringify(info));
-      await fetch(`${apiUrl}create/`, options);
+      await fetch(apiUrl, options);
       mutate(); // mutate causes complete collection to be refetched
     } catch (err) {
       handleError(err);

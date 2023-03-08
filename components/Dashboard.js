@@ -8,10 +8,10 @@ import Footer from "./Footer.js";
 
 export default function Dashboard() {
   
-  const { createResource, updateResource, deleteResource, resources } =
-    useResource();
   const { data: session } = useSession();
   console.log(session)
+  const { createResource, updateResource, deleteResource, resources } =
+    useResource();
 
 
   return (
