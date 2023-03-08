@@ -1,5 +1,5 @@
 import useSWR from "swr";
-export const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_SMS_ALERT_URL;
+export const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
 import { useSession } from "next-auth/react";
 
 export default function useResource() {
