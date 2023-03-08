@@ -4,11 +4,11 @@ import Google from 'next-auth/providers/google';
 
 export default function Home({ providers }) {
 
-  const { data: session, loading } = useSession()
+  const { data: session, status } = useSession()
 
 
   useEffect(() => {
-    if (session) {
+    if (status === 'authenticated') {
       if (session.provider === "google") {
         var auth_token = session.auth_token
         backendapi(auth_token)
@@ -28,6 +28,7 @@ export default function Home({ providers }) {
     }).then((data) => data.json())
       .then((res) => {
         if (res.tokens) {
+          console.log(res)
           document.getElementById("email_id").innerText = res.email
           document.getElementById("token").innerText = res.tokens
         }
@@ -45,6 +46,12 @@ export default function Home({ providers }) {
           Sign in with google
         </button>
 
+        <button
+          type="button"
+          onClick={() => signOut()}
+        >
+          Sign Out
+        </button>
         
         <h6 id='user_token'></h6>
         <div>
