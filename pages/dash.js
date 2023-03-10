@@ -1,5 +1,4 @@
-import { useSession, signIn, signOut } from "next-auth/react"
-import { useRouter } from "next/router"
+import { useSession } from "next-auth/react"
 import Login from "@/components/Login"
 import Dashboard from "@/components/Dashboard"
 
@@ -7,7 +6,7 @@ import Dashboard from "@/components/Dashboard"
 export default function Dash() {
 
   const { data: session, status } = useSession()
-  const router = useRouter()
+  console.log(session)
 
   if (status === 'authenticated') {
     return (

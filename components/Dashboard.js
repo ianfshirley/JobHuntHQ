@@ -1,4 +1,5 @@
 import { useSession, signOut } from "next-auth/react"
+import JobList from "./JobList"
 
 
 export default function Dashboard() {
@@ -15,6 +16,7 @@ export default function Dashboard() {
       >
         Sign Out
       </button>
+      <JobList />
     </>
   )
 }
