@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react"
-import Google from 'next-auth/providers/google';
+
 
 export default function Home() {
 
