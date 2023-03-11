@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 
 export default function AddJobForm() {
 
-  const { resources, createResource } = useResource();
+  const { createResource } = useResource();
   const [startDate, setStartDate] = useState(new Date());
   const { data: session } = useSession()
   const [selectedValue, setSelectedValue] = useState('choose');
