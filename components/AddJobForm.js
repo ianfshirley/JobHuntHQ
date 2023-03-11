@@ -12,7 +12,6 @@ export default function AddJobForm() {
   const [selectedValue, setSelectedValue] = useState('choose');
 
   function handleCreateJob(e) {
-    e.preventDefault();
 
     const originalDate = e.target.date_applied.value;
     const parsedDateArr = originalDate.split('/');
