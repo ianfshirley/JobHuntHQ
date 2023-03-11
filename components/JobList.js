@@ -5,11 +5,14 @@ import React, { useState } from 'react';
 
 export default function JobList() {
 
-  const { resources } = useResource();
+  const { resources, deleteResource } = useResource();
 
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
-
   const toggleUpdateModal = () => setIsUpdateModalOpen(!isUpdateModalOpen);
+
+  function handleDeleteJob(id) {
+    deleteResource(id)
+  }
 
   return (
     <div className='bg-blue-300'>
@@ -23,7 +26,13 @@ export default function JobList() {
               className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
               onClick={toggleUpdateModal}
             >
-              Update Job
+              Update
+            </button>
+            <button
+              className="text-white bg-gradient-to-br from-pink-300 to-orange-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
+              onClick={() => handleDeleteJob(job.id)}
+            >
+              Delete
             </button>
           </div>
         )

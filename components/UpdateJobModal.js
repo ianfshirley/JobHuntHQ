@@ -11,7 +11,7 @@ export default function UpdateJobModal(props) {
         onRequestClose={props.toggleModal}
         contentLabel="Example Modal"
         overlayClassName="overlay"
-        appElement={document.getElementById('root') || undefined}
+        ariaHideApp={false}
         className=""
       >
         <h1 className="text-3xl">Update Job Form Coming Soon!</h1>
