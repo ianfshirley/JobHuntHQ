@@ -10,8 +10,12 @@ export default function AddJobForm() {
   const [startDate, setStartDate] = useState(new Date());
   const { data: session } = useSession()
   const [selectedValue, setSelectedValue] = useState('choose');
+  const user = session.auth_token.user_id;
+  console.log(user)
 
   function handleCreateJob(e) {
+
+    e.preventDefault()
 
     const originalDate = e.target.date_applied.value;
     const parsedDateArr = originalDate.split('/');
@@ -30,7 +34,7 @@ export default function AddJobForm() {
       third: false,
       rejected: false,
       offer: false,
-      user: session.user.id,
+      user: user,
     };
     createResource(info);
     console.log(info)
@@ -71,7 +75,7 @@ export default function AddJobForm() {
           <h3 className='text-white p-1'>Did you write a cover letter?</h3>
           <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' />
 
-          <h3 className='text-white'>Did you hav a referral? If so, who were they?</h3>
+          <h3 className='text-white'>Did you have a referral? If so, who were they?</h3>
           <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Johnny at Facebook' />
 
           <h3 className='text-white p-1'>Notes</h3>

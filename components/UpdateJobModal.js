@@ -3,20 +3,67 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from 'react';
 import { useSession } from "next-auth/react";
+import useResource from '../hooks/useResource';
 
 
 export default function UpdateJobModal(props) {
 
+  const { resources, udpateResource } = useResource();
+
+  function handleUpdateJob(e) {
+
+    e.preventDefault();
+
+    const originalDate = e.target.date_applied.value;
+    const parsedDateArr = originalDate.split('/');
+    const parsedDate = `${parsedDateArr[2]}-${parsedDateArr[0]}-${parsedDateArr[1]}`;
+
+    const info = {
+      title: e.target.title.value,
+      company: e.target.company.value,
+      date_applied: parsedDate,
+      method: e.target.method.value,
+      cover_letter: e.target.cover_letter.value,
+      referral: e.target.referral.value,
+      notes: e.target.notes.value,
+      first: false,
+      second: false,
+      third: false,
+      rejected: false,
+      offer: false,
+      user: session.user.id,
+    };
+
+    // Add properties to the info object based on the input name
+    if (e.target.first.checked) {
+      info.first = true;
+    }
+    if (e.target.second.checked) {
+      info.second = true;
+    }
+    if (e.target.third.checked) {
+      info.third = true;
+    }
+    if (e.target.rejected.checked) {
+      info.rejected = true;
+    }
+    if (e.target.offer.checked) {
+      info.offer = true;
+    }
+
+    udpateResource(id, info)
+    // onRequestClose()
+    console.log(info)
+
+  }
 
 
-console.log('here is the props in modal: ', props);
+
   return (
     <>
       <Modal
         isOpen={props.isModalOpen}
         onRequestClose={props.toggleModal}
-        // job={props.job}
-        // key={props.job.id}
         contentLabel="Example Modal"
         overlayClassName="overlay"
         ariaHideApp={false}
@@ -29,8 +76,19 @@ console.log('here is the props in modal: ', props);
         >
           X
         </button>
+        <form onSubmit={() => handleUpdateJob(props.job.id)}>
+          <label>
+            Job Title
+            <input
+              type='text'
+              defaultValue={props.job.title}
+            >
+            </input>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
 
-        {/* <p>{props.job.title}</p> */}
+
 
       </Modal>
     </>
