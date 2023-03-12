@@ -1,14 +1,22 @@
 import Modal from "react-modal";
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from 'react';
+import { useSession } from "next-auth/react";
 
 
 export default function UpdateJobModal(props) {
 
 
+
+console.log('here is the props in modal: ', props);
   return (
     <>
       <Modal
         isOpen={props.isModalOpen}
         onRequestClose={props.toggleModal}
+        // job={props.job}
+        // key={props.job.id}
         contentLabel="Example Modal"
         overlayClassName="overlay"
         ariaHideApp={false}
@@ -21,6 +29,9 @@ export default function UpdateJobModal(props) {
         >
           X
         </button>
+
+        {/* <p>{props.job.title}</p> */}
+
       </Modal>
     </>
   )
