@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react"
+import Footer from "./Footer"
 
 
 export default function LandingPage() {
@@ -6,7 +7,7 @@ export default function LandingPage() {
   const { data: session } = useSession()
 
   return (
-    <>
+    <div className="min-h-screen">
       <header className="bg-rose-200 text-3xl text-cyan-900">
         <h1>JobHuntHQ</h1>
         <h3>Making it Easier to Keep Track of Your Job Hunt!</h3>
@@ -18,6 +19,7 @@ export default function LandingPage() {
       >
         Sign in with google
       </button>
-    </>
+      <Footer />
+    </div>
   )
 }

@@ -45,7 +45,7 @@ export default function AddJobForm() {
     <>
       <form
         onSubmit={handleCreateJob}
-        className="flex w-6/12 p-6 mx-auto my-16 bg-blue-800/50 border border-blue-900 h-3/4 place-contents-center"
+        className="flex  my-16 bg-blue-800/50 border border-blue-900 h-3/4 place-contents-center"
       >
         <fieldset className='w-11/12 place-contents-center'>
 
