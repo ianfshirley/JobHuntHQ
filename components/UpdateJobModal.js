@@ -1,9 +1,10 @@
 import Modal from "react-modal";
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from 'react-datepicker';
+// import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from 'react';
 import { useSession } from "next-auth/react";
 import useResource from '../hooks/useResource';
+import { format, parseISO } from 'date-fns';
 
 
 export default function UpdateJobModal(props) {
@@ -15,6 +16,11 @@ export default function UpdateJobModal(props) {
   const [selectedValue, setSelectedValue] = useState('choose');
   const user = session.auth_token.user_id;
 
+  // Getting date_applied from DB and converting it to a prettier format:
+  const originalDate = props.job.date_applied;
+  const parsedDate = parseISO(originalDate);
+  const formattedDate = format(parsedDate, 'MMMM d, yyyy');
+
   function handleUpdateJob(id, e) {
 
     e.preventDefault();
@@ -23,18 +29,23 @@ export default function UpdateJobModal(props) {
 
     console.log('handleUpdateJob has been called')
 
-    // const originalDate = e.target.date_applied;
-    // const parsedDateArr = originalDate.split('/');
+    // Getting the date from the form input and converting it to correct format for DB:
+    // const inputDate = e.target.date_applied;
+    // const parsedDateArr = inputDate.split('/');
     // const parsedDate = `${parsedDateArr[2]}-${parsedDateArr[0]}-${parsedDateArr[1]}`;
 
     const info = {
       title: e.target.title.value,
       company: e.target.company.value,
-      // date_applied: parsedDate,
-      // method: e.target.method.value,
+      method: e.target.method.value,
       cover_letter: e.target.cover_letter.value,
       referral: e.target.referral.value,
       notes: e.target.notes.value,
+      // first: false,
+      // second: false,
+      // third: false,
+      // rejected: false,
+      // offer: false,
       user: user,
     };
 
@@ -93,13 +104,13 @@ export default function UpdateJobModal(props) {
             {/* Modal Body: */}
             <div className="relative p-6 flex-auto">
 
-              <p>First Interview?  {props.job.first}</p>
-
               <form
                 onSubmit={(e) => handleUpdateJob(props.job.id, e)}
                 className="flex mx-10 p-6 bg-blue-800 border border-blue-900 justify-center"
               >
                 <fieldset className='w-11/12 flex flex-col items-center'>
+
+                  <p>Date Applied: {formattedDate}</p>
 
                   <h3 className='text-white p-1'>Job Title</h3>
                   <input type='text' name='title' id='title' className='content-center mx-2 my-2 p-0.5' defaultValue={props.job.title} />
@@ -107,6 +118,8 @@ export default function UpdateJobModal(props) {
                   <h3 className='text-white p-1'>Company</h3>
                   <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.company} />
 
+                  {/* <h3 className='text-white p-1'>Date Applied</h3>
+                  <DatePicker name='date_applied' id='date_applied' showIcon selected={formattedDate} onChange={(date) => setStartDate(date)} className="pl-2" /> */}
 
                   <h3 className='text-white p-1'>Did you write a cover letter?</h3>
                   <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.cover_letter} />
