@@ -45,7 +45,7 @@ export default function useResource() {
 
   async function updateResource(id, info) {
     try {
-      const url = apiUrl + id;
+      const url = apiUrl + id + '/';
       const options = config();
       options.method = "PATCH";
       options.body = JSON.stringify(info);
