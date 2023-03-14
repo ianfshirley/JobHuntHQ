@@ -1,6 +1,7 @@
 import { useSession, signOut } from "next-auth/react"
 import JobList from "./JobList"
 import AddJobForm from "./AddJobForm"
+import Header from "./Header"
 
 
 export default function Dashboard() {
@@ -9,6 +10,7 @@ export default function Dashboard() {
 
   return (
     <div className=" flex flex-col justify-around text-center content-center bg-gray-200 min-h-screen">
+      <Header />
       <h1 className="bg-rose-200 text-3xl text-cyan-900">Dashboard Page</h1>
       <div className='bg-green-300'>
         <h3>You are logged in as {session.user.name}</h3>
