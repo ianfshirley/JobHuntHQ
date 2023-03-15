@@ -10,8 +10,6 @@ import { format, parseISO } from 'date-fns';
 export default function UpdateJobModal(props) {
 
   const { updateResource } = useResource();
-
-  const [startDate, setStartDate] = useState(new Date());
   const { data: session } = useSession()
   const [selectedValue, setSelectedValue] = useState('choose');
   const user = session.auth_token.user_id;
@@ -21,18 +19,17 @@ export default function UpdateJobModal(props) {
   const parsedDate = parseISO(originalDate);
   const formattedDate = format(parsedDate, 'MMMM d, yyyy');
 
+  // Getting the existing true/false values for job status from DB:
+  const [first, setFirst] = useState(props.job.first);
+  const [second, setSecond] = useState(props.job.second);
+  const [third, setThird] = useState(props.job.third);
+  const [rejected, setRejected] = useState(props.job.rejected);
+  const [offer, setOffer] = useState(props.job.offer);
+
   function handleUpdateJob(id, e) {
 
     e.preventDefault();
-
     const { target } = e;
-
-    console.log('handleUpdateJob has been called')
-
-    // Getting the date from the form input and converting it to correct format for DB:
-    // const inputDate = e.target.date_applied;
-    // const parsedDateArr = inputDate.split('/');
-    // const parsedDate = `${parsedDateArr[2]}-${parsedDateArr[0]}-${parsedDateArr[1]}`;
 
     const info = {
       title: e.target.title.value,
@@ -41,37 +38,38 @@ export default function UpdateJobModal(props) {
       cover_letter: e.target.cover_letter.value,
       referral: e.target.referral.value,
       notes: e.target.notes.value,
-      // first: false,
-      // second: false,
-      // third: false,
-      // rejected: false,
-      // offer: false,
+      first: first,
+      second: second,
+      third: third,
+      rejected: rejected,
+      offer: offer,
       user: user,
     };
-
-    // // Add properties to the info object based on the input name
-    // if (e.target.first.checked) {
-    //   info.first = true;
-    // }
-    // if (e.target.second.checked) {
-    //   info.second = true;
-    // }
-    // if (e.target.third.checked) {
-    //   info.third = true;
-    // }
-    // if (e.target.rejected.checked) {
-    //   info.rejected = true;
-    // }
-    // if (e.target.offer.checked) {
-    //   info.offer = true;
-    // }
 
     updateResource(id, info);
     // onRequestClose()
     console.log(info)
-
   }
 
+  function handleFirstChange(e) {
+    setFirst(e.target.checked);
+  }
+
+  function handleSecondChange(e) {
+    setSecond(e.target.checked);
+  }
+
+  function handleThirdChange(e) {
+    setThird(e.target.checked);
+  }
+
+  function handleRejectedChange(e) {
+    setRejected(e.target.checked);
+  }
+
+  function handleOfferChange(e) {
+    setOffer(e.target.checked);
+  }
 
 
   return (
@@ -136,6 +134,50 @@ export default function UpdateJobModal(props) {
                     rows="1" // start with one row
                     style={{ resize: 'vertical', minHeight: '50px' }} // set the minimum height and allow vertical resizing
                   />
+
+                  <div>
+                    <h3 className='text-white'>Application Status</h3>
+                    <label>
+                      First Interview
+                      <input
+                        type="checkbox"
+                        checked={first}
+                        onChange={handleFirstChange}
+                      />
+                    </label>
+                    <label>
+                      Second Interview
+                      <input
+                        type="checkbox"
+                        checked={second}
+                        onChange={handleSecondChange}
+                      />
+                    </label>
+                    <label>
+                      Third Interview
+                      <input
+                        type="checkbox"
+                        checked={third}
+                        onChange={handleThirdChange}
+                      />
+                    </label>
+                    <label>
+                      Rejected
+                      <input
+                        type="checkbox"
+                        checked={rejected}
+                        onChange={handleRejectedChange}
+                      />
+                    </label>
+                    <label>
+                      Offer Received!
+                      <input
+                        type="checkbox"
+                        checked={offer}
+                        onChange={handleOfferChange}
+                      />
+                    </label>
+                  </div>
 
                   <button className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 m-4'>Save Changes</button>
 
