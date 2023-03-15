@@ -17,8 +17,15 @@ export default function JobList() {
     console.log(job.id)
   }
 
-  function handleDeleteJob(id) {
-    deleteResource(id)
+  function handleDeleteJob(job) {
+    const confirmed = window.confirm(`Are you sure you want to delete ${job.title} at ${job.company}?`)
+
+    if (confirmed) {
+      deleteResource(job.id);
+      console.log('Job deleted');
+    } else {
+      console.log('Job not deleted'); 
+    }
   }
 
   return (
@@ -36,7 +43,7 @@ export default function JobList() {
             </button>
             <button
               className="text-white bg-gradient-to-br from-pink-300 to-orange-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center  m-2 w-32"
-              onClick={() => handleDeleteJob(job.id)}
+              onClick={() => handleDeleteJob(job)}
             >
               Delete
             </button>
