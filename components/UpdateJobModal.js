@@ -1,6 +1,4 @@
 import Modal from "react-modal";
-// import DatePicker from 'react-datepicker';
-// import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from 'react';
 import { useSession } from "next-auth/react";
 import useResource from '../hooks/useResource';
@@ -78,7 +76,6 @@ export default function UpdateJobModal(props) {
         isOpen={props.isModalOpen}
         onRequestClose={props.toggleModal}
         contentLabel="Example Modal"
-        // overlayClassName="overlay"
         ariaHideApp={false}
         className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'
       >
@@ -115,9 +112,6 @@ export default function UpdateJobModal(props) {
 
                   <h3 className='text-white p-1'>Company</h3>
                   <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.company} />
-
-                  {/* <h3 className='text-white p-1'>Date Applied</h3>
-                  <DatePicker name='date_applied' id='date_applied' showIcon selected={formattedDate} onChange={(date) => setStartDate(date)} className="pl-2" /> */}
 
                   <h3 className='text-white p-1'>Did you write a cover letter?</h3>
                   <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.cover_letter} />

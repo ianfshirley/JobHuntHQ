@@ -11,7 +11,6 @@ export default function AddJobForm() {
   const { data: session } = useSession()
   const [selectedValue, setSelectedValue] = useState('choose');
   const user = session.auth_token.user_id;
-  // console.log(user)
 
   function handleCreateJob(e) {
 
