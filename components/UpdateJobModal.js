@@ -104,7 +104,7 @@ export default function UpdateJobModal(props) {
 
               <form
                 onSubmit={(e) => handleUpdateJob(props.job.id, e)}
-                className="flex mx-10 p-6 bg-blue-800 border border-blue-900 justify-center"
+                className="flex mx-10 p-6 bg-blue-800 border border-blue-900 justify-center text-lg"
               >
                 <fieldset className='w-11/12 flex flex-col items-center'>
 
@@ -135,48 +135,56 @@ export default function UpdateJobModal(props) {
                     style={{ resize: 'vertical', minHeight: '50px' }} // set the minimum height and allow vertical resizing
                   />
 
-                  <div>
-                    <h3 className='text-white'>Application Status</h3>
-                    <label>
-                      First Interview
-                      <input
-                        type="checkbox"
-                        checked={first}
-                        onChange={handleFirstChange}
-                      />
-                    </label>
-                    <label>
-                      Second Interview
-                      <input
-                        type="checkbox"
-                        checked={second}
-                        onChange={handleSecondChange}
-                      />
-                    </label>
-                    <label>
-                      Third Interview
-                      <input
-                        type="checkbox"
-                        checked={third}
-                        onChange={handleThirdChange}
-                      />
-                    </label>
-                    <label>
-                      Rejected
-                      <input
-                        type="checkbox"
-                        checked={rejected}
-                        onChange={handleRejectedChange}
-                      />
-                    </label>
-                    <label>
-                      Offer Received!
-                      <input
-                        type="checkbox"
-                        checked={offer}
-                        onChange={handleOfferChange}
-                      />
-                    </label>
+                  <div className='text-white flex flex-col content-center text-center'>
+                    <h3 className='text-xl'>Application Status</h3>
+                    <div className="flex flex-wrap justify-evenly">
+                      <label>
+                        First Interview
+                        <input
+                          className="ml-1 mr-4"
+                          type="checkbox"
+                          checked={first}
+                          onChange={handleFirstChange}
+                        />
+                      </label>
+                      <label>
+                        Second Interview
+                        <input
+                          className="ml-1 mr-4"
+                          type="checkbox"
+                          checked={second}
+                          onChange={handleSecondChange}
+                        />
+                      </label>
+                      <label>
+                        Third Interview
+                        <input
+                          className="ml-1 mr-4"
+                          type="checkbox"
+                          checked={third}
+                          onChange={handleThirdChange}
+                        />
+                      </label>
+                      <label>
+                        Rejected &#128546;
+                        <input
+                          className="ml-1 mr-4"
+                          type="checkbox"
+                          checked={rejected}
+                          onChange={handleRejectedChange}
+                        />
+                      </label>
+                      <label>
+                        Offer Received! &#129321;
+                        <input
+                          className="ml-1 mr-4"
+                          type="checkbox"
+                          checked={offer}
+                          onChange={handleOfferChange}
+                        />
+                      </label>
+                    </div>
+
                   </div>
 
                   <button className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 m-4'>Save Changes</button>
