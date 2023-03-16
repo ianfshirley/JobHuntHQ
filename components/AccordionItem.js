@@ -1,12 +1,11 @@
 import { GoX, GoChevronDown } from 'react-icons/go';
 import { Collapse } from 'react-collapse';
 import useResource from '@/hooks/useResource';
-import React, { useState } from 'react';
 
 
 export default function AccordionItem({ open, toggleAccordionItem, title, company, date_applied, method, cover_letter, referral, notes, first, second, third, rejected, offer, job, openUpdateModal, toggleModal }) {
 
-  const { resources, deleteResource } = useResource();
+  const { deleteResource } = useResource();
 
   function handleDeleteJob() {
     const confirmed = window.confirm(`Are you sure you want to delete ${title} at ${company}?`)
@@ -38,6 +37,53 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
           <p>Did you write a cover letter? {cover_letter}</p>
           <p>Did you have a referral? {referral}</p>
           <p>Notes: {notes}</p>
+          <div className="flex flex-row text-center w-auto">
+            {
+              first
+                ?
+                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                  First Interview: &#x2713;
+                </div>
+                :
+                ''
+            }
+            {
+              second
+                ?
+                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                  Second Interview: &#x2713;
+                </div>
+                :
+                ''
+            }
+            {
+              third
+                ?
+                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                  Third Interview: &#x2713;
+                </div>
+                :
+                ''
+            }
+            {
+              rejected
+                ?
+                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                  Rejected: &#128546;
+                </div>
+                :
+                ''
+            }
+            {
+              offer
+                ?
+                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                  Offer Received! &#129321;
+                </div>
+                :
+                ''
+            }
+          </div>
           <button
             className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
             onClick={() => openUpdateModal(job)}
@@ -51,9 +97,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             Delete
           </button>
         </div>
-
       </Collapse>
-
     </div>
   )
 }

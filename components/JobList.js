@@ -28,17 +28,6 @@ export default function JobList() {
     console.log(job.id)
   }
 
-  function handleDeleteJob(job) {
-    const confirmed = window.confirm(`Are you sure you want to delete ${job.title} at ${job.company}?`)
-
-    if (confirmed) {
-      deleteResource(job.id);
-      console.log('Job deleted');
-    } else {
-      console.log('Job not deleted');
-    }
-  }
-
   return (
     <div className='bg-blue-300 overflow-auto'>
       <h3 className='text-2xl pb-2'>Job List</h3>
