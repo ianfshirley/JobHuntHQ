@@ -47,7 +47,8 @@ export default function JobList() {
           <AccordionItem
             key={index}
             open={index === open}
-            title={`${job.title} at ${job.company}`}
+            title={job.title}
+            company={job.company}
             date_applied={job.date_applied}
             method={job.method}
             cover_letter={job.cover_letter}
@@ -58,6 +59,8 @@ export default function JobList() {
             third={job.third}
             rejected={job.rejected}
             offer={job.offer}
+            job={job}
+            openUpdateModal={openUpdateModal}
             toggleAccordionItem={() => toggleAccordionItem(index)}
           />
         )

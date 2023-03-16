@@ -45,7 +45,7 @@ export default function UpdateJobModal(props) {
     };
 
     updateResource(id, info);
-    toggleModal();
+    props.toggleModal();
     console.log(info)
   }
 
