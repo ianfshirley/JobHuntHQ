@@ -45,7 +45,7 @@ export default function UpdateJobModal(props) {
     };
 
     updateResource(id, info);
-    // onRequestClose()
+    toggleModal();
     console.log(info)
   }
 
@@ -74,7 +74,7 @@ export default function UpdateJobModal(props) {
     <>
       <Modal
         isOpen={props.isModalOpen}
-        onRequestClose={props.toggleModal}
+        toggleModal={props.toggleModal}
         contentLabel="Example Modal"
         ariaHideApp={false}
         className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'
