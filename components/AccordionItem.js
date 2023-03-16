@@ -6,9 +6,9 @@ export default function AccordionItem({open, toggleAccordionItem, title, date_ap
 
 
   return (
-    <div className="pt-[10px]">
+    <div className="border border-solid border-black">
       <div
-      className="bg-white py-[25px] ox-[50px] flex justify-between items-center cursor-pointer"
+      className="bg-white py-[25px] px-[50px] flex justify-between items-center cursor-pointer"
       onClick={toggleAccordionItem}
       >
         <p className="text-[22px] font-semibold">{title}</p>

@@ -1,5 +1,5 @@
 import useResource from '../hooks/useResource';
-import UpdateJobModal from "./UpdateJobModal"
+import UpdateJobModal from "./UpdateJobModal";
 import React, { useState } from 'react';
 import AccordionItem from './AccordionItem';
 
@@ -40,7 +40,7 @@ export default function JobList() {
   }
 
   return (
-    <div className='bg-blue-300'>
+    <div className='bg-blue-300 overflow-auto'>
       <h3 className='text-2xl pb-2'>Job List</h3>
       {resources && resources.map((job, index) => {
         return (
