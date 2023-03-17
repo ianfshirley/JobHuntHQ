@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex justify-between bg-green-300">
+      <header className="flex justify-between">
         <Image
           className="pl-6"
           src={JobHuntHQ}

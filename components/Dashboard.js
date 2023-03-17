@@ -17,7 +17,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className=" flex flex-col text-center  content-center bg-gray-200 min-h-screen">
+    <div className=" flex flex-col text-center  content-center bg-gradient-to-tl from-juniper via-mauve to-juniper min-h-screen">
       <Header />
         <div className="grid grid-cols-5 grid-rows-1  w-full">
           <h1 className="self-center justify-self-center text-3xl text-cyan-900 col-start-2 col-span-3">Dashboard Page</h1>
@@ -40,3 +40,4 @@ export default function Dashboard() {
     </div>
   )
 }
+
