@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'juniper': '#6c8a93',
+        'june': '#89a1a9',
         'gin': '#eaf1ec',
         'frost': '#80827d',
         'mauve': '#736a70',
