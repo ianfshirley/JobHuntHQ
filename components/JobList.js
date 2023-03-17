@@ -29,7 +29,7 @@ export default function JobList() {
   }
 
   return (
-    <div className='bg-blue-300 overflow-auto'>
+    <div className='overflow-auto'>
       <h3 className='text-2xl pb-2'>Job List</h3>
       {resources && resources.map((job, index) => {
         return (

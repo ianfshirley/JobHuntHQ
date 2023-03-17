@@ -17,12 +17,12 @@ export default function Dashboard() {
   }
 
   return (
-    <div className=" flex flex-col text-center justify-between content-center bg-gray-200 min-h-screen">
+    <div className=" flex flex-col text-center  content-center bg-gray-200 min-h-screen">
       <Header />
-        <div className="flex flex-row text-center">
-          <h1 className="bg-rose-200 text-3xl text-cyan-900">Dashboard Page</h1>
+        <div className="grid grid-cols-5 grid-rows-1  w-full">
+          <h1 className="self-center justify-self-center text-3xl text-cyan-900 col-start-2 col-span-3">Dashboard Page</h1>
           <button
-            className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 m-4'
+            className='justify-self-end text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-base px-5 py-2.5 text-center mr-8 mb-2 m-4 w-32'
             onClick={() => openAddModal()}
           >
               Add a Job
