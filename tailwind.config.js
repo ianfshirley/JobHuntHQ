@@ -13,6 +13,9 @@ module.exports = {
         'frost': '#80827d',
         'mauve': '#736a70',
         'midnight': '#262a33',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },
   },
