@@ -23,7 +23,7 @@ export default function LandingPage() {
 
       <div className="flex flex-col justify-between">
 
-        <div className="flex flex-col justify-evenly text-center">
+        <div className="flex flex-col justify-evenly text-center mt-24">
           <h1
             className="text-6xl text-white"
           >Say goodbye to job search chaos.</h1>
@@ -31,13 +31,13 @@ export default function LandingPage() {
           <button
             type="button"
             onClick={() => signIn("google")}
-            className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto'
+            className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6'
           >
             Sign in to Get Started
           </button>
         </div>
 
-        <div className="flex justify-between mt-48 mb-12 mx-24">
+        <div className="flex items-center justify-between mt-24 mb-12 mx-24 text-white text-3xl">
           <p className="w-2/5">
             Add job applications to your list to easily keep track of all the jobs you've applied for.
           </p>
@@ -48,7 +48,7 @@ export default function LandingPage() {
           />
         </div>
 
-        <div className="flex justify-between mx-24 my-12">
+        <div className="flex items-center justify-between mx-24 mt-12 mb-24 text-white text-3xl">
           <Image
             className="w-1/2"
             src={placeholder2}
