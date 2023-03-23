@@ -23,15 +23,15 @@ export default function LandingPage() {
 
       <div className="flex flex-col justify-between">
 
-        <div className="flex flex-col justify-evenly text-center mt-24">
+        <div className="flex flex-col justify-evenly text-center mt-24 mx-48">
           <h1
             className="text-6xl text-white"
-          >Say goodbye to job search chaos.</h1>
-          <p>JobHuntHQ is a user-friendly job search tool that helps you stay organized and on top of your job search process</p>
+          >Say goodbye to<br/> job search chaos.</h1>
+          <p className="text-xl pt-2">JobHuntHQ is a user-friendly job search tool that helps you<br/> stay organized and on top of your job search process</p>
           <button
             type="button"
             onClick={() => signIn("google")}
-            className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6'
+            className='text-white bg-gradient-to-r from-[#0A1F3E] via-[#193A5D] to-[#335479]  hover:bg-gradient-to-br font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6'
           >
             Sign in to Get Started
           </button>
