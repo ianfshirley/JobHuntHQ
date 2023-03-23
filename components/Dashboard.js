@@ -17,7 +17,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className=" flex flex-col text-center justify-between content-center bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))]  from-june via-juniper to-rose-300 min-h-screen">
+    <div className=" flex flex-col text-center justify-between content-center bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))]  from-teal-300 via-blue-300 to-rose-200 min-h-screen">
       <Header />
         <div className="grid grid-cols-5 grid-rows-1  w-full">
           <h1 className="self-center justify-self-center text-3xl text-gin col-start-2 col-span-3">Dashboard Page</h1>
