@@ -37,7 +37,7 @@ export default function LandingPage() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between mt-24 mb-12 mx-24 text-white text-3xl">
+        <div className="flex items-center justify-between mt-24 mb-12 mx-24 text-white text-3xl text-center">
           <p className="w-2/5">
             Add job applications to your list to easily keep track of all the jobs you've applied for.
           </p>
@@ -48,7 +48,7 @@ export default function LandingPage() {
           />
         </div>
 
-        <div className="flex items-center justify-between mx-24 mt-12 mb-24 text-white text-3xl">
+        <div className="flex items-center justify-between mx-24 mt-12 mb-24 text-white text-3xl text-center">
           <Image
             className="w-1/2"
             src={placeholder2}
@@ -62,7 +62,7 @@ export default function LandingPage() {
       </div>
 
       <div>
-        <p className="m-auto w-full flex justify-end">
+        <p className="m-auto w-full flex justify-end text-sky-300 text-sm">
           <a href="https://www.vecteezy.com/free-vector/background">Background Vectors by Vecteezy</a>
         </p>
         <Footer />
