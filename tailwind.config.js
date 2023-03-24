@@ -8,12 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'juniper': '#6c8a93',
-        'seafoam': '#89a1a9',
-        'foam': '#f8f6ed',
-        'frost': '#afd1c4',
-        'beige': '#c4a596',
-        'midnight': '#4a4b51',
+        'cream': '#f9f7f5',
+        'beige': '#ab9282',
+        'cornflower': '#84cce4',
+        'mauve': '#7b636b',
+        'dusk': '#3a5c79',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
