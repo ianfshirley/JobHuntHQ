@@ -18,13 +18,13 @@ export default function LandingPage() {
         />
       </header>
 
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col justify-between font-montserrat">
 
         <div className="flex flex-col justify-evenly text-center mt-24 mx-48">
           <h1
-            className="text-6xl text-white"
+            className="text-6xl text-white "
           >Say goodbye to<br/> job search chaos.</h1>
-          <p className="text-xl text-[#0A1F3E] font-semibold pt-2">JobHuntHQ is a user-friendly job search tool that helps you<br/> stay organized and on top of your job search process</p>
+          <p className="text-xl text-[#0A1F3E] font-semibold pt-4">JobHuntHQ is a user-friendly job search tool that helps you<br/> stay organized and on top of your job search process</p>
           <button
             type="button"
             onClick={() => signIn("google")}

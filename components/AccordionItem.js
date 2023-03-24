@@ -26,23 +26,28 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
       >
         <p className="text-[22px] font-semibold text-twilight">{title} at {company}</p>
         <div className="text-[30px]">
-          {open ? <GoX className='text-twilight'/> : <GoChevronDown className='text-twilight'/>}
+          {open ? <GoX className='text-twilight' /> : <GoChevronDown className='text-twilight' />}
         </div>
       </div>
 
       <Collapse isOpened={open}>
-        <div className='text-twilight'>
+        <div className='text-twilight font-semibold'>
           <p>Date Applied: {date_applied}</p>
           <p>Method of Application: {method}</p>
           <p>Did you write a cover letter? {cover_letter}</p>
           <p>Did you have a referral? {referral}</p>
           <p>Notes: {notes}</p>
-          <div className="flex flex-row text-center w-auto">
+          <div className="flex text-center w-auto">
             {
               first
                 ?
-                <div className="px-10 w-3/4 h-auto mb-2 py-4">
-                  First Interview: &#x2713;
+                <div className="flex px-10 w-3/4 h-auto mb-2 py-4">
+                  <p>
+                    First Interview:
+                  </p>
+                  <p className='text-cornflower font-extrabold pl-2'>
+                    &#x2713;
+                  </p>
                 </div>
                 :
                 ''
@@ -50,8 +55,13 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               second
                 ?
-                <div className="px-10 w-3/4 h-auto mb-2 py-4">
-                  Second Interview: &#x2713;
+                <div className="flex px-10 w-3/4 h-auto mb-2 py-4">
+                  <p>
+                    Second Interview:
+                  </p>
+                  <p className='text-cornflower font-extrabold pl-2'>
+                    &#x2713;
+                  </p>
                 </div>
                 :
                 ''
@@ -59,8 +69,13 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               third
                 ?
-                <div className="px-10 w-3/4 h-auto mb-2 py-4">
-                  Third Interview: &#x2713;
+                <div className="flex px-10 w-3/4 h-auto mb-2 py-4">
+                  <p>
+                    Third Interview:
+                  </p>
+                  <p className='text-cornflower font-extrabold pl-2'>
+                    &#x2713;
+                  </p>
                 </div>
                 :
                 ''
@@ -85,13 +100,13 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             }
           </div>
           <button
-            className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
+            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
             onClick={() => openUpdateModal(job)}
           >
             Update
           </button>
           <button
-            className="text-white bg-gradient-to-br from-pink-300 to-orange-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center  m-2 w-32"
+            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center m-2 w-32"
             onClick={() => handleDeleteJob()}
           >
             Delete
