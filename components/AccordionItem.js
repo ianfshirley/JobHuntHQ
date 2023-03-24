@@ -1,4 +1,5 @@
 import { GoX, GoChevronDown } from 'react-icons/go';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { Collapse } from 'react-collapse';
 import useResource from '@/hooks/useResource';
 
@@ -21,22 +22,63 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
   return (
     <div className="">
       <div
-        className=" py-[25px] px-[50px] flex justify-between items-center  cursor-pointer"
+        className=" py-4 px-10 flex justify-between items-center  cursor-pointer"
         onClick={toggleAccordionItem}
       >
-        <p className="text-[22px] font-semibold text-twilight">{title} at {company}</p>
-        <div className="text-[30px]">
+        <p className="text-2xl font-semibold text-twilight">{title} at {company}</p>
+        <div className="text-3xl">
           {open ? <GoX className='text-cornflower' /> : <GoChevronDown className='text-cornflower' />}
         </div>
       </div>
 
       <Collapse isOpened={open}>
-        <div className='text-twilight font-semibold'>
-          <p>Date Applied: {date_applied}</p>
-          <p>Method of Application: {method}</p>
-          <p>Did you write a cover letter? {cover_letter}</p>
-          <p>Did you have a referral? {referral}</p>
-          <p>Notes: {notes}</p>
+
+        <div>
+
+          <div className='grid grid-cols-9 grid-rows-3 gap-4 items-center mt-4 text-twilight font-semibold'>
+            <p className='col-start-1 col-end-5 row-span-1'>
+              Date Applied: {date_applied}
+            </p>
+            <p className='col-start-5 col-end-9 row-span-1'>
+              Method of Application: {method}
+            </p>
+            <p className='col-start-1 col-end-5 row-start-2 row-span-1'>
+              Did you write a cover letter? {cover_letter}
+            </p>
+            <p className='col-start-5 col-end-9 row-start-2 row-span-1'>
+              Did you have a referral? {referral}
+            </p>
+            <p className='col-start-1 col-span-9'>
+              Notes: {notes}
+            </p>
+
+            <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-center items-center pr-6'>
+              <FaEdit
+                className='text-cornflower text-2xl'
+                onClick={() => openUpdateModal(job)}
+              />
+            </div>
+            <div className='col-start-9 col-span-1 row-start-2 row-span-1 flex justify-center items-center pr-7'>
+              <FaTrashAlt
+                className='text-cornflower text-2xl'
+                onClick={() => handleDeleteJob()}
+              />
+            </div>
+          
+            {/* <button
+            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
+            onClick={() => openUpdateModal(job)}
+          >
+            Update
+          </button> */}
+            {/* <button
+            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center m-2 w-32"
+            onClick={() => handleDeleteJob()}
+          >
+            Delete
+          </button> */}
+          </div>
+
           <div className="flex justify-center text-center w-auto">
             {
               first
@@ -99,19 +141,10 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
                 ''
             }
           </div>
-          <button
-            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
-            onClick={() => openUpdateModal(job)}
-          >
-            Update
-          </button>
-          <button
-            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center m-2 w-32"
-            onClick={() => handleDeleteJob()}
-          >
-            Delete
-          </button>
+
         </div>
+
+
       </Collapse>
     </div>
   )
