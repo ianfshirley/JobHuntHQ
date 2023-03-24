@@ -1,7 +1,7 @@
 import useResource from "@/hooks/useResource"
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSession } from "next-auth/react";
 import Modal from "react-modal";
 
@@ -13,6 +13,15 @@ export default function AddJobModal(props) {
   const { data: session } = useSession()
   const [selectedValue, setSelectedValue] = useState('choose');
   const user = session.auth_token.user_id;
+
+  useEffect(() => {
+    if (props.isModalOpen) {
+      setCoverLetter(false);
+      setReferral(false);
+      setStartDate(new Date());
+      setSelectedValue('choose');
+    }
+  }, [props.isModalOpen]);
 
   const [cover_letter, setCoverLetter] = useState(false);
   const [referral, setReferral] = useState(false);
@@ -92,17 +101,24 @@ export default function AddJobModal(props) {
               >
                 <fieldset className='w-11/12 place-contents-center'>
 
-                  <h3 className='text-white p-1'>Job Title</h3>
-                  <input type='text' name='title' id='title' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Software Developer' />
+                  <label className=''>
+                    Job Title
+                    <input type='text' name='title' id='title' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Software Developer' />
+                  </label>
 
-                  <h3 className='text-white p-1'>Company</h3>
-                  <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Code Fellows' />
+                  <label className=''>
+                    Company
+                    <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Code Fellows' />
+                  </label>
 
-                  <h3 className='text-white p-1'>Date Applied</h3>
-                  <DatePicker name='date_applied' id='date_applied' showIcon selected={startDate} onChange={(date) => setStartDate(date)} className="pl-2" />
+                  <label className=''>
+                    Date Applied
+                    <DatePicker name='date_applied' id='date_applied' showIcon selected={startDate} onChange={(date) => setStartDate(date)} className="pl-2" />
+                  </label>
 
-                  <h3 className='text-white p-1'>How did you apply?</h3>
-                  <select
+                  <label className=''>
+                    How did you apply?
+                    <select
                     value={selectedValue}
                     onChange={(e) => setSelectedValue(e.target.value)}
                     name='method'
@@ -111,11 +127,13 @@ export default function AddJobModal(props) {
                     <option value='choose' disabled>Choose One</option>
                     <option value="linkedin">LinkedIn</option>
                     <option value="indeed">Indeed</option>
+                    <option value="otta">Otta</option>
                     <option value="company_website">Company Website</option>
                     <option value="other">Other</option>
-                  </select>
+                    </select>
+                  </label>
 
-                  <label className='text-white p-1'>
+                  <label className=''>
                     Did you write a cover letter?
                     <input
                       className="ml-1 mr-4"
@@ -125,7 +143,7 @@ export default function AddJobModal(props) {
                     />
                   </label>
 
-                  <label className='text-white p-1'>
+                  <label className=''>
                     Did you have a referral?
                     <input
                       className="ml-1 mr-4"
@@ -135,15 +153,16 @@ export default function AddJobModal(props) {
                     />
                   </label>
 
-
-                  {/* <h3 className='text-white p-1'>Did you write a cover letter?</h3>
-                  <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' />
-
-                  <h3 className='text-white'>Did you have a referral? If so, who were they?</h3>
-                  <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Johnny at Facebook' /> */}
-
-                  <h3 className='text-white p-1'>Notes</h3>
-                  <input type='text' name='notes' id='notes' className='content-center mx-2 my-2 w-6/12 p-0.5' />
+                  <label className=''>
+                    Notes
+                    <textarea
+                      className='content-center mx-2 my-2  p-0.5'
+                      name='notes'
+                      id='notes'
+                      rows="1" // start with one row
+                      style={{ resize: 'vertical', minHeight: '50px' }} // set the minimum height and allow vertical resizing
+                    />
+                  </label>
 
                   <button className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 m-4'>Add New Application</button>
 
