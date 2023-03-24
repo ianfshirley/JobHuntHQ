@@ -33,32 +33,49 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
 
       <Collapse isOpened={open}>
 
-        <div>
+        <div className=''>
 
-          <div className='grid grid-cols-9 grid-rows-3 gap-4 items-center text-twilight font-semibold'>
-            <div className='flex justify-center col-start-1 col-end-5 row-span-1'>
-              <p className='pr-2'>
+          <div className='grid grid-cols-9 grid-rows-3 gap-4 items-center text-twilight font-semibold mb-4'>
+            <div className='flex justify-start col-start-1 col-end-5 row-span-1 ml-16 border-l-2 border-cornflower'>
+              <p className='pl-4 pr-2'>
                 Date Applied:
               </p>
-              <p className=''>
+              <p className='text-dusk font-bold'>
                 {date_applied}
               </p>
             </div>
-            {/* <p className='col-start-1 col-end-5 row-span-1'>
-              Date Applied: {date_applied}
-            </p> */}
-            <p className='col-start-5 col-end-9 row-span-1'>
-              Method of Application: {method}
-            </p>
-            <p className='col-start-1 col-end-5 row-start-2 row-span-1'>
-              Did you write a cover letter? {cover_letter}
-            </p>
-            <p className='col-start-5 col-end-9 row-start-2 row-span-1'>
-              Did you have a referral? {referral}
-            </p>
-            <p className='col-start-1 col-span-9'>
-              Notes: {notes}
-            </p>
+            <div className='flex justify-start col-start-5 col-end-9 row-span-1 border-l-2 border-cornflower'>
+              <p className='pl-4 pr-2'>
+                Method of Application:
+              </p>
+              <p className='text-dusk font-bold'>
+                {method}
+              </p>
+            </div>
+            <div className='flex justify-start col-start-1 col-end-5 row-start-2 row-span-1 ml-16 border-l-2 border-cornflower'>
+              <p className='pl-4 pr-2'>
+                Did you write a cover letter?
+              </p>
+              <p className='text-dusk font-bold'>
+                {cover_letter}
+              </p>
+            </div>
+            <div className='flex justify-start col-start-5 col-end-9 row-start-2 row-span-1 border-l-2 border-cornflower'>
+              <p className='pl-4 pr-2'>
+                Did you have a referral?
+              </p>
+              <p className='text-dusk font-bold'>
+                {referral}
+              </p>
+            </div>
+            <div className='flex justify-start col-start-1 col-span-9 ml-16 border-l-2 border-cornflower'>
+              <p className='pl-4 pr-2'>
+                Notes:
+              </p>
+              <p className='text-dusk font-bold'>
+                {notes}
+              </p>
+            </div>
 
             <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-center items-center pr-6'>
               <FaEdit
@@ -74,11 +91,11 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             </div>
           </div>
 
-          <div className="flex justify-center text-center w-auto text-twilight font-semibold ">
+          <div className="flex justify-center text-center w-auto text-dusk font-bold ">
             {
               first
                 ?
-                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
+                <div className="flex justify-center px-6 h-auto mb-4 py-2  rounded-lg shadow-lg">
                   <p>
                     First Interview:
                   </p>
@@ -92,7 +109,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               second
                 ?
-                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
+                <div className="flex justify-center px-6 h-auto mb-4 py-2  rounded-lg shadow-lg">
                   <p>
                     Second Interview:
                   </p>
@@ -106,7 +123,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               third
                 ?
-                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
+                <div className="flex justify-center px-6 h-auto mb-4 py-2  rounded-lg shadow-lg">
                   <p>
                     Third Interview:
                   </p>
@@ -120,7 +137,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               rejected
                 ?
-                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
+                <div className="flex justify-center px-6 h-auto mb-4 py-2  rounded-lg shadow-lg">
                   Rejected: &#128546;
                 </div>
                 :
@@ -129,7 +146,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               offer
                 ?
-                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
+                <div className="flex justify-center px-6 h-auto mb-4 py-2  rounded-lg shadow-lg">
                   Offer Received! &#129321;
                 </div>
                 :
