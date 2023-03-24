@@ -37,11 +37,11 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
           <p>Did you write a cover letter? {cover_letter}</p>
           <p>Did you have a referral? {referral}</p>
           <p>Notes: {notes}</p>
-          <div className="flex text-center w-auto">
+          <div className="flex justify-center text-center w-auto">
             {
               first
                 ?
-                <div className="flex px-10 w-3/4 h-auto mb-2 py-4">
+                <div className="flex justify-center px-10 h-auto mb-2 py-4">
                   <p>
                     First Interview:
                   </p>
@@ -55,7 +55,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               second
                 ?
-                <div className="flex px-10 w-3/4 h-auto mb-2 py-4">
+                <div className="flex justify-center px-10 h-auto mb-2 py-4">
                   <p>
                     Second Interview:
                   </p>
@@ -69,7 +69,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               third
                 ?
-                <div className="flex px-10 w-3/4 h-auto mb-2 py-4">
+                <div className="flex justify-center px-10 h-auto mb-2 py-4">
                   <p>
                     Third Interview:
                   </p>
@@ -83,7 +83,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               rejected
                 ?
-                <div className="px-10 w-3/4 h-auto mb-2 py-4">
+                <div className="flex justify-center px-10 h-auto mb-2 py-4">
                   Rejected: &#128546;
                 </div>
                 :
@@ -92,7 +92,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               offer
                 ?
-                <div className="px-10 w-3/4 h-auto mb-2 py-4">
+                <div className="flex justify-center px-10 h-auto mb-2 py-4">
                   Offer Received! &#129321;
                 </div>
                 :
