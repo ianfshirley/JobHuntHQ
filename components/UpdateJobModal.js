@@ -144,12 +144,6 @@ export default function UpdateJobModal(props) {
                     />
                   </label>
 
-                  {/* <h3 className='text-white p-1'>Did you write a cover letter?</h3>
-                  <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.cover_letter} /> */}
-
-                  {/* <h3 className='text-white'>Did you have a referral? If so, who were they?</h3>
-                  <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 p-0.5' defaultValue={props.job.referral} /> */}
-
                   <h3 className='text-white p-1'>Notes</h3>
                   <textarea
                     className='content-center mx-2 my-2  p-0.5'

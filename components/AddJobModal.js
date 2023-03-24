@@ -14,6 +14,9 @@ export default function AddJobModal(props) {
   const [selectedValue, setSelectedValue] = useState('choose');
   const user = session.auth_token.user_id;
 
+  const [cover_letter, setCoverLetter] = useState(false);
+  const [referral, setReferral] = useState(false);
+
   function handleCreateJob(e) {
 
     e.preventDefault()
@@ -29,8 +32,8 @@ export default function AddJobModal(props) {
       company: e.target.company.value,
       date_applied: parsedDate,
       method: e.target.method.value,
-      cover_letter: e.target.cover_letter.value,
-      referral: e.target.referral.value,
+      cover_letter: cover_letter,
+      referral: referral,
       notes: e.target.notes.value,
       first: false,
       second: false,
@@ -43,6 +46,14 @@ export default function AddJobModal(props) {
     console.log(info);
     props.toggleModal();
 
+  }
+
+  function handleCoverLetterChange(e) {
+    setCoverLetter(e.target.checked);
+  }
+
+  function handleReferralChange(e) {
+    setReferral(e.target.checked);
   }
 
   return (
@@ -104,11 +115,32 @@ export default function AddJobModal(props) {
                     <option value="other">Other</option>
                   </select>
 
-                  <h3 className='text-white p-1'>Did you write a cover letter?</h3>
+                  <label className='text-white p-1'>
+                    Did you write a cover letter?
+                    <input
+                      className="ml-1 mr-4"
+                      type="checkbox"
+                      checked={cover_letter}
+                      onChange={handleCoverLetterChange}
+                    />
+                  </label>
+
+                  <label className='text-white p-1'>
+                    Did you have a referral?
+                    <input
+                      className="ml-1 mr-4"
+                      type="checkbox"
+                      checked={referral}
+                      onChange={handleReferralChange}
+                    />
+                  </label>
+
+
+                  {/* <h3 className='text-white p-1'>Did you write a cover letter?</h3>
                   <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' />
 
                   <h3 className='text-white'>Did you have a referral? If so, who were they?</h3>
-                  <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Johnny at Facebook' />
+                  <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Johnny at Facebook' /> */}
 
                   <h3 className='text-white p-1'>Notes</h3>
                   <input type='text' name='notes' id='notes' className='content-center mx-2 my-2 w-6/12 p-0.5' />
