@@ -22,12 +22,12 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
   return (
     <div className="">
       <div
-        className=" py-4 px-10 flex justify-between items-center  cursor-pointer"
+        className=" py-4 px-10 flex justify-between items-center cursor-pointer text-cornflower hover:text-mauve"
         onClick={toggleAccordionItem}
       >
         <p className="text-2xl font-semibold text-twilight">{title} at {company}</p>
         <div className="text-3xl">
-          {open ? <GoX className='text-cornflower' /> : <GoChevronDown className='text-cornflower' />}
+          {open ? <GoX /> : <GoChevronDown />}
         </div>
       </div>
 
@@ -35,10 +35,18 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
 
         <div>
 
-          <div className='grid grid-cols-9 grid-rows-3 gap-4 items-center mt-4 text-twilight font-semibold'>
-            <p className='col-start-1 col-end-5 row-span-1'>
+          <div className='grid grid-cols-9 grid-rows-3 gap-4 items-center text-twilight font-semibold'>
+            <div className='flex justify-center col-start-1 col-end-5 row-span-1'>
+              <p className='pr-2'>
+                Date Applied:
+              </p>
+              <p className=''>
+                {date_applied}
+              </p>
+            </div>
+            {/* <p className='col-start-1 col-end-5 row-span-1'>
               Date Applied: {date_applied}
-            </p>
+            </p> */}
             <p className='col-start-5 col-end-9 row-span-1'>
               Method of Application: {method}
             </p>
@@ -54,36 +62,23 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
 
             <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-center items-center pr-6'>
               <FaEdit
-                className='text-cornflower text-2xl'
+                className='text-cornflower text-2xl cursor-pointer hover:text-mauve'
                 onClick={() => openUpdateModal(job)}
               />
             </div>
             <div className='col-start-9 col-span-1 row-start-2 row-span-1 flex justify-center items-center pr-7'>
               <FaTrashAlt
-                className='text-cornflower text-2xl'
+                className='text-cornflower text-2xl cursor-pointer hover:text-mauve'
                 onClick={() => handleDeleteJob()}
               />
             </div>
-          
-            {/* <button
-            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-auto mb-2 w-32"
-            onClick={() => openUpdateModal(job)}
-          >
-            Update
-          </button> */}
-            {/* <button
-            className="text-white bg-gradient-to-br from-cornflower to-cyan-400 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center m-2 w-32"
-            onClick={() => handleDeleteJob()}
-          >
-            Delete
-          </button> */}
           </div>
 
-          <div className="flex justify-center text-center w-auto">
+          <div className="flex justify-center text-center w-auto text-twilight font-semibold ">
             {
               first
                 ?
-                <div className="flex justify-center px-10 h-auto mb-2 py-4">
+                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
                   <p>
                     First Interview:
                   </p>
@@ -97,7 +92,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               second
                 ?
-                <div className="flex justify-center px-10 h-auto mb-2 py-4">
+                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
                   <p>
                     Second Interview:
                   </p>
@@ -111,7 +106,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               third
                 ?
-                <div className="flex justify-center px-10 h-auto mb-2 py-4">
+                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
                   <p>
                     Third Interview:
                   </p>
@@ -125,7 +120,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               rejected
                 ?
-                <div className="flex justify-center px-10 h-auto mb-2 py-4">
+                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
                   Rejected: &#128546;
                 </div>
                 :
@@ -134,7 +129,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               offer
                 ?
-                <div className="flex justify-center px-10 h-auto mb-2 py-4">
+                <div className="flex justify-center px-6 h-auto m-2 py-2  rounded-lg shadow-lg">
                   Offer Received! &#129321;
                 </div>
                 :
