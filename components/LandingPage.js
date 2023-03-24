@@ -1,4 +1,4 @@
-import { useSession, signIn } from "next-auth/react"
+import { signIn } from "next-auth/react"
 import Footer from "./Footer"
 import Image from "next/image"
 import JobHuntHQ from 'public/JobHuntHQ.png'
@@ -7,9 +7,6 @@ import placeholder2 from 'public/placeholder2.png'
 
 
 export default function LandingPage() {
-
-  const { data: session } = useSession()
-
   return (
     <div className="bg-[url('/jhq-background.jpg')] bg-cover min-h-screen flex flex-col justify-between">
 
@@ -27,7 +24,7 @@ export default function LandingPage() {
           <h1
             className="text-6xl text-white"
           >Say goodbye to<br/> job search chaos.</h1>
-          <p className="text-xl pt-2">JobHuntHQ is a user-friendly job search tool that helps you<br/> stay organized and on top of your job search process</p>
+          <p className="text-xl text-[#0A1F3E] font-semibold pt-2">JobHuntHQ is a user-friendly job search tool that helps you<br/> stay organized and on top of your job search process</p>
           <button
             type="button"
             onClick={() => signIn("google")}

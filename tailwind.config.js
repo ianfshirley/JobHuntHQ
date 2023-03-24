@@ -9,15 +9,15 @@ module.exports = {
     extend: {
       colors: {
         'juniper': '#6c8a93',
-        'june': '#89a1a9',
-        'gin': '#eaf1ec',
-        'frost': '#80827d',
-        'mauve': '#736a70',
-        'midnight': '#262a33',
+        'seafoam': '#89a1a9',
+        'foam': '#f8f6ed',
+        'frost': '#afd1c4',
+        'beige': '#c4a596',
+        'midnight': '#4a4b51',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      }
+      },
     },
   },
   plugins: [],
