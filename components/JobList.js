@@ -29,31 +29,34 @@ export default function JobList() {
   }
 
   return (
-    <div className='overflow-auto border border-midnight m-8'>
-      <h3 className='text-2xl pb-2'>Job List</h3>
-      {resources && resources.map((job, index) => {
-        return (
-          <AccordionItem
-            key={index}
-            open={index === open}
-            title={job.title}
-            company={job.company}
-            date_applied={job.date_applied}
-            method={job.method}
-            cover_letter={job.cover_letter}
-            referral={job.referral}
-            notes={job.notes}
-            first={job.first}
-            second={job.second}
-            third={job.third}
-            rejected={job.rejected}
-            offer={job.offer}
-            job={job}
-            openUpdateModal={openUpdateModal}
-            toggleAccordionItem={() => toggleAccordionItem(index)}
-          />
-        )
-      })}
+    <div className='overflow-auto rounded-lg m-8 bg-beige'>
+      <h3 className='text-3xl font-semibold text-dusk pt-4 pb-2'>Job List</h3>
+      <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream'>
+        {resources && resources.map((job, index) => {
+          return (
+            <AccordionItem
+              key={index}
+              open={index === open}
+              title={job.title}
+              company={job.company}
+              date_applied={job.date_applied}
+              method={job.method}
+              cover_letter={job.cover_letter}
+              referral={job.referral}
+              notes={job.notes}
+              first={job.first}
+              second={job.second}
+              third={job.third}
+              rejected={job.rejected}
+              offer={job.offer}
+              job={job}
+              openUpdateModal={openUpdateModal}
+              toggleAccordionItem={() => toggleAccordionItem(index)}
+            />
+          )
+        })}
+      </div>
+
       {selectedJob && (
         <UpdateJobModal
           isModalOpen={isUpdateModalOpen}

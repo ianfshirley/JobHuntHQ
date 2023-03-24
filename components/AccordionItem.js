@@ -19,19 +19,19 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
   }
 
   return (
-    <div className="border border-solid border-black">
+    <div className="">
       <div
-        className="bg-white py-[25px] px-[50px] flex justify-between items-center cursor-pointer"
+        className=" py-[25px] px-[50px] flex justify-between items-center cursor-pointer"
         onClick={toggleAccordionItem}
       >
-        <p className="text-[22px] font-semibold">{title} at {company}</p>
+        <p className="text-[22px] font-semibold text-twilight">{title} at {company}</p>
         <div className="text-[30px]">
-          {open ? <GoX /> : <GoChevronDown />}
+          {open ? <GoX className='text-twilight'/> : <GoChevronDown className='text-twilight'/>}
         </div>
       </div>
 
       <Collapse isOpened={open}>
-        <div className=''>
+        <div className='text-twilight'>
           <p>Date Applied: {date_applied}</p>
           <p>Method of Application: {method}</p>
           <p>Did you write a cover letter? {cover_letter}</p>
@@ -41,7 +41,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               first
                 ?
-                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                <div className="px-10 w-3/4 h-auto mb-2 py-4">
                   First Interview: &#x2713;
                 </div>
                 :
@@ -50,7 +50,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               second
                 ?
-                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                <div className="px-10 w-3/4 h-auto mb-2 py-4">
                   Second Interview: &#x2713;
                 </div>
                 :
@@ -59,7 +59,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               third
                 ?
-                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                <div className="px-10 w-3/4 h-auto mb-2 py-4">
                   Third Interview: &#x2713;
                 </div>
                 :
@@ -68,7 +68,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               rejected
                 ?
-                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                <div className="px-10 w-3/4 h-auto mb-2 py-4">
                   Rejected: &#128546;
                 </div>
                 :
@@ -77,7 +77,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
             {
               offer
                 ?
-                <div className="bg-slate-100 px-10 font-semibold text-slate-800 w-3/4 h-auto rounded-md border-1 border-blue-300 mb-2 py-4">
+                <div className="px-10 w-3/4 h-auto mb-2 py-4">
                   Offer Received! &#129321;
                 </div>
                 :

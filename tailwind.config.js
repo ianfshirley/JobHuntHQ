@@ -1,3 +1,6 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,11 +15,16 @@ module.exports = {
         'beige': '#ab9282',
         'cornflower': '#84cce4',
         'mauve': '#7b636b',
-        'dusk': '#3a5c79',
+        'light-mauve': '#877281',
+        'twilight': '#3a5c79',
+        'dusk': '#2C4254'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        montserrat: ['var(--montserrat-font)', ...fontFamily.sans],
+      }
     },
   },
   plugins: [],
