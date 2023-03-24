@@ -25,7 +25,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
         className=" py-4 px-10 flex justify-between items-center cursor-pointer text-cornflower hover:text-mauve"
         onClick={toggleAccordionItem}
       >
-        <p className="text-2xl font-semibold text-twilight">{title} at {company}</p>
+        <p className="text-xl font-semibold text-twilight">{title} at {company}</p>
         <div className="text-3xl">
           {open ? <GoX /> : <GoChevronDown />}
         </div>
@@ -52,23 +52,39 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
                 {method}
               </p>
             </div>
-            <div className='flex justify-start col-start-1 col-end-5 row-start-2 row-span-1 ml-16 border-l-2 border-cornflower'>
+            <div className='flex justify-start items-center col-start-1 col-end-5 row-start-2 row-span-1 ml-16 border-l-2 border-cornflower'>
               <p className='pl-4 pr-2'>
                 Did you write a cover letter?
               </p>
-              <p className='text-dusk font-bold'>
-                {cover_letter}
-              </p>
+              {
+                cover_letter
+                  ?
+                  <p className='text-cornflower text-xl font-extrabold pl-2'>
+                    &#x2713;
+                  </p>
+                  :
+                  <p className='text-mauve text-xl font-extrabold pl-2'>
+                    X
+                  </p>
+              }
             </div>
-            <div className='flex justify-start col-start-5 col-end-9 row-start-2 row-span-1 border-l-2 border-cornflower'>
+            <div className='flex justify-start items-center col-start-5 col-end-9 row-start-2 row-span-1 border-l-2 border-cornflower'>
               <p className='pl-4 pr-2'>
                 Did you have a referral?
               </p>
-              <p className='text-dusk font-bold'>
-                {referral}
-              </p>
+              {
+                referral
+                  ?
+                  <p className='text-cornflower text-xl font-extrabold pl-2'>
+                    &#x2713;
+                  </p>
+                  :
+                  <p className='text-mauve text-xl font-extrabold pl-2'>
+                    X
+                  </p>
+              }
             </div>
-            <div className='flex justify-start col-start-1 col-span-9 ml-16 border-l-2 border-cornflower'>
+            <div className='flex justify-start text-start items-center col-start-1 col-span-8 ml-16 border-l-2 border-cornflower max-w-fit'>
               <p className='pl-4 pr-2'>
                 Notes:
               </p>
@@ -77,13 +93,13 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
               </p>
             </div>
 
-            <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-center items-center pr-6'>
+            <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-center items-center'>
               <FaEdit
                 className='text-cornflower text-2xl cursor-pointer hover:text-mauve'
                 onClick={() => openUpdateModal(job)}
               />
             </div>
-            <div className='col-start-9 col-span-1 row-start-2 row-span-1 flex justify-center items-center pr-7'>
+            <div className='col-start-9 col-span-1 row-start-2 row-span-1 flex justify-center items-center'>
               <FaTrashAlt
                 className='text-cornflower text-2xl cursor-pointer hover:text-mauve'
                 onClick={() => handleDeleteJob()}

@@ -29,9 +29,9 @@ export default function JobList() {
   }
 
   return (
-    <div className='overflow-auto rounded-lg m-8 bg-beige'>
+    <div className='overflow-auto rounded-lg m-8 bg-beige shadow-2xl font-montserrat'>
       <h3 className='text-3xl font-semibold text-cream pt-4 pb-2'>Job List</h3>
-      <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream'>
+      <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream shadow-lg'>
         {resources && resources.map((job, index) => {
           return (
             <AccordionItem

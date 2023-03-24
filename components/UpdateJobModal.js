@@ -18,6 +18,9 @@ export default function UpdateJobModal(props) {
   const formattedDate = format(parsedDate, 'MMMM d, yyyy');
 
   // Getting the existing true/false values for job status from DB:
+  const [cover_letter, setCoverLetter] = useState(props.job.cover_letter);
+  const [referral, setReferral] = useState(props.job.referral);
+
   const [first, setFirst] = useState(props.job.first);
   const [second, setSecond] = useState(props.job.second);
   const [third, setThird] = useState(props.job.third);
@@ -33,8 +36,8 @@ export default function UpdateJobModal(props) {
       title: e.target.title.value,
       company: e.target.company.value,
       method: e.target.method.value,
-      cover_letter: e.target.cover_letter.value,
-      referral: e.target.referral.value,
+      cover_letter: cover_letter,
+      referral: referral,
       notes: e.target.notes.value,
       first: first,
       second: second,
@@ -47,6 +50,14 @@ export default function UpdateJobModal(props) {
     updateResource(id, info);
     props.toggleModal();
     console.log(info)
+  }
+
+  function handleCoverLetterChange(e) {
+    setCoverLetter(e.target.checked);
+  }
+
+  function handleReferralChange(e) {
+    setReferral(e.target.checked);
   }
 
   function handleFirstChange(e) {
@@ -113,11 +124,31 @@ export default function UpdateJobModal(props) {
                   <h3 className='text-white p-1'>Company</h3>
                   <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.company} />
 
-                  <h3 className='text-white p-1'>Did you write a cover letter?</h3>
-                  <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.cover_letter} />
+                  <label className='text-white p-1'>
+                    Did you write a cover letter?
+                    <input
+                      className="ml-1 mr-4"
+                      type="checkbox"
+                      checked={cover_letter}
+                      onChange={handleCoverLetterChange}
+                    />
+                  </label>
 
-                  <h3 className='text-white'>Did you have a referral? If so, who were they?</h3>
-                  <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 p-0.5' defaultValue={props.job.referral} />
+                  <label className='text-white p-1'>
+                    Did you have a referral?
+                    <input
+                      className="ml-1 mr-4"
+                      type="checkbox"
+                      checked={referral}
+                      onChange={handleReferralChange}
+                    />
+                  </label>
+
+                  {/* <h3 className='text-white p-1'>Did you write a cover letter?</h3>
+                  <input type='text' name='cover_letter' id='cover_letter' className='content-center mx-2 my-2 w-6/12 p-0.5' defaultValue={props.job.cover_letter} /> */}
+
+                  {/* <h3 className='text-white'>Did you have a referral? If so, who were they?</h3>
+                  <input type='text' name='referral' id='referral' className='content-center mx-2 my-2 p-0.5' defaultValue={props.job.referral} /> */}
 
                   <h3 className='text-white p-1'>Notes</h3>
                   <textarea
