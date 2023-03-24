@@ -21,12 +21,12 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
   return (
     <div className="">
       <div
-        className=" py-[25px] px-[50px] flex justify-between items-center cursor-pointer"
+        className=" py-[25px] px-[50px] flex justify-between items-center  cursor-pointer"
         onClick={toggleAccordionItem}
       >
         <p className="text-[22px] font-semibold text-twilight">{title} at {company}</p>
         <div className="text-[30px]">
-          {open ? <GoX className='text-twilight' /> : <GoChevronDown className='text-twilight' />}
+          {open ? <GoX className='text-cornflower' /> : <GoChevronDown className='text-cornflower' />}
         </div>
       </div>
 

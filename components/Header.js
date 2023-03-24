@@ -19,7 +19,7 @@ export default function Header() {
         <div className='flex justify-evenly items-center text-cream'>
           <h3 className="px-5">You are logged in as {session.user.name}</h3>
           <button
-            className="text-white bg-gradient-to-br from-slate-800 to-slate-700 hover:bg-gradient-to-bl border border-solid border-cornflower font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-4 w-32"
+            className="text-white bg-gradient-to-br from-beige to-light-mauve hover:bg-gradient-to-bl border border-solid border-cornflower font-mono font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-4 w-32"
             type="button"
             onClick={() => signOut()}
           >

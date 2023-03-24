@@ -16,7 +16,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className=" flex flex-col text-center justify-between content-center bg-twilight min-h-screen">
+    <div className=" flex flex-col text-center justify-between content-center bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-twilight via-cornflower to-twilight min-h-screen">
       <Header />
         <div className="grid grid-cols-5 grid-rows-1  w-full">
           <h1 className="self-center justify-self-center text-6xl text-cream font-montserrat col-start-2 col-span-3">DASHBOARD</h1>

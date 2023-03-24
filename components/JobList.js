@@ -16,7 +16,7 @@ export default function JobList() {
     setOpen(index)
   }
 
-  const { resources, deleteResource } = useResource();
+  const { resources } = useResource();
 
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const toggleUpdateModal = () => setIsUpdateModalOpen(!isUpdateModalOpen);
@@ -30,7 +30,7 @@ export default function JobList() {
 
   return (
     <div className='overflow-auto rounded-lg m-8 bg-beige'>
-      <h3 className='text-3xl font-semibold text-slate-800 pt-4 pb-2'>Job List</h3>
+      <h3 className='text-3xl font-semibold text-cream pt-4 pb-2'>Job List</h3>
       <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream'>
         {resources && resources.map((job, index) => {
           return (
@@ -40,7 +40,7 @@ export default function JobList() {
               title={job.title}
               company={job.company}
               date_applied={job.date_applied}
-              method={job.method}
+              method={job.method_label}
               cover_letter={job.cover_letter}
               referral={job.referral}
               notes={job.notes}
