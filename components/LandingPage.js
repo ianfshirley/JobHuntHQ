@@ -2,9 +2,8 @@ import { signIn } from "next-auth/react"
 import Footer from "./Footer"
 import Image from "next/image"
 import JobHuntHQ from 'public/JobHuntHQ.png'
-import AddJobScreenshot from 'public/AddJobScreenshot.png'
-import JobListScreenshot from 'public/JobListScreenshot.png'
-import placeholder2 from 'public/placeholder2.png'
+import AddJob from 'public/AddJob.png'
+import JobList from 'public/JobList.png'
 
 
 export default function LandingPage() {
@@ -29,7 +28,7 @@ export default function LandingPage() {
           <button
             type="button"
             onClick={() => signIn("google")}
-            className='text-white bg-gradient-to-r from-[#0A1F3E] via-[#193A5D] to-[#335479]  hover:bg-gradient-to-br font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6'
+            className='text-white bg-gradient-to-r from-[#0A1F3E] via-[#193A5D] to-[#335479]  hover:bg-gradient-to-br font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6 shadow-md shadow-gray-300 hover:shadow-none'
           >
             Sign in to Get Started
           </button>
@@ -40,7 +39,7 @@ export default function LandingPage() {
             Add job applications to your list to easily keep track of all the jobs you've applied for.
           </p>
           <Image
-              src={AddJobScreenshot}
+              src={AddJob}
               alt='Screenshot of the Add Job Form'
               className="w-1/2 shadow-2xl shadow-dusk border-2 border-light-mauve rounded-sm"
             />
@@ -48,7 +47,7 @@ export default function LandingPage() {
 
         <div className="flex items-center justify-between mx-24 mt-12 mb-24 text-white text-3xl text-center">
           <Image
-            src={JobListScreenshot}
+            src={JobList}
             alt='Screenshot of Dashboard Page showing Job List and Job Detail for the selected job'
             className="w-1/2 shadow-2xl shadow-dusk border-2 border-light-mauve rounded-sm"
           />
