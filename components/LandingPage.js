@@ -28,7 +28,7 @@ export default function LandingPage() {
           <button
             type="button"
             onClick={() => signIn("google")}
-            className='text-white bg-gradient-to-r from-[#0A1F3E] via-[#193A5D] to-[#335479]  hover:bg-gradient-to-br font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6 shadow-md shadow-gray-300 hover:shadow-none'
+            className='text-white bg-gradient-to-r from-[#0A1F3E] via-[#193A5D] to-[#335479]  hover:bg-gradient-to-br font-mono rounded-lg text-md px-5 py-2.5 text-center mx-auto mt-6 shadow-md shadow-gray-300 hover:shadow-none hover:text-teal-100'
           >
             Sign in to Get Started
           </button>
