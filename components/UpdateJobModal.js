@@ -22,18 +22,12 @@ export default function UpdateJobModal(props) {
 
   useEffect(() => {
     if (props.isModalOpen) {
-      setCoverLetter(false);
-      setReferral(false);
+      setCoverLetter(props.job.cover_letter);
+      setReferral(props.job.referral);
       setStartDate(parseISO(props.job.date_applied));
       setSelectedValue(props.job.method)
     }
-  }, [props.isModalOpen, props.job.date_applied, props.job.method]);
-
-  // useEffect(() => {
-
-  //   setStartDate(parseISO(props.job.date_applied));
-  //   setSelectedValue(props.job.method)
-  // }, [props.job.date_applied]);
+  }, [props.isModalOpen, props.job.cover_letter, props.job.referral, props.job.date_applied, props.job.method]);
 
   // Getting the existing true/false values for job status from DB:
   const [cover_letter, setCoverLetter] = useState(props.job.cover_letter);
@@ -166,7 +160,6 @@ export default function UpdateJobModal(props) {
                     name='method'
                     id='method'
                     className='content-center mx-4 my-2 px-2 py-0.5'>
-                    <option value='choose' disabled>Choose One</option>
                     <option value="linkedin">LinkedIn</option>
                     <option value="indeed">Indeed</option>
                     <option value="otta">Otta</option>
@@ -175,79 +168,82 @@ export default function UpdateJobModal(props) {
                   </select>
                 </label>
 
-                <label className='text-white p-1'>
+                <label className='flex justify-center items-center col-span-1 row-start-4 row-span-1'>
                   Did you write a cover letter?
                   <input
-                    className="ml-1 mr-4"
+                    className="mx-4 w-4 h-4 bg-cream border-dusk rounded"
                     type="checkbox"
                     checked={cover_letter}
                     onChange={handleCoverLetterChange}
                   />
                 </label>
 
-                <label className='text-white p-1'>
+                <label className='flex justify-center items-center col-start-2 col-span-1 row-start-4 row-span-1'>
                   Did you have a referral?
                   <input
-                    className="ml-1 mr-4"
+                    className="mx-4 w-4 h-4 bg-cream border-dusk rounded"
                     type="checkbox"
                     checked={referral}
                     onChange={handleReferralChange}
                   />
                 </label>
 
-                <h3 className='text-white p-1'>Notes</h3>
-                <textarea
-                  className='content-center mx-2 my-2  p-0.5'
-                  name='notes'
-                  id='notes'
-                  defaultValue={props.job.notes}
-                  rows="1" // start with one row
-                  style={{ resize: 'vertical', minHeight: '50px' }} // set the minimum height and allow vertical resizing
-                />
+                <label className='flex justify-evenly items-center col-span-2 row-start-5 row-span-1'>
+                  Notes
+                  <textarea
+                    className='content-center mx-2 my-2 w-2/3 p-0.5'
+                    name='notes'
+                    id='notes'
+                    defaultValue={props.job.notes}
+                    rows="1" // start with one row
+                    style={{ resize: 'vertical', minHeight: '50px' }} // set the minimum height and allow vertical resizing
+                  />
+                </label>
 
-                <div className='text-white flex flex-col content-center text-center'>
+
+                <div className='flex flex-col col-span-2 row-start-6 row-span-2 content-center text-center bg-cream text-dusk'>
                   <h3 className='text-xl'>Application Status</h3>
                   <div className="flex flex-wrap justify-evenly">
-                    <label>
+                    <label className="h-auto my-2 ml-1 p-2  rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
                       First Interview
                       <input
-                        className="ml-1 mr-4"
+                        className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
                         type="checkbox"
                         checked={first}
                         onChange={handleFirstChange}
                       />
                     </label>
-                    <label>
+                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
                       Second Interview
                       <input
-                        className="ml-1 mr-4"
+                        className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
                         type="checkbox"
                         checked={second}
                         onChange={handleSecondChange}
                       />
                     </label>
-                    <label>
+                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
                       Third Interview
                       <input
-                        className="ml-1 mr-4"
+                        className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
                         type="checkbox"
                         checked={third}
                         onChange={handleThirdChange}
                       />
                     </label>
-                    <label>
+                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
                       Rejected &#128546;
                       <input
-                        className="ml-1 mr-4"
+                        className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
                         type="checkbox"
                         checked={rejected}
                         onChange={handleRejectedChange}
                       />
                     </label>
-                    <label>
+                    <label className="h-auto my-2 ml-1 mr-2 p-2  rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
                       Offer Received! &#129321;
                       <input
-                        className="ml-1 mr-4"
+                        className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
                         type="checkbox"
                         checked={offer}
                         onChange={handleOfferChange}
@@ -257,7 +253,7 @@ export default function UpdateJobModal(props) {
 
                 </div>
 
-                <button className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 m-4'>Save Changes</button>
+                <button className='col-span-2 row-start-8 row-span-1 text-white bg-gradient-to-r from-dusk via-twilight to-slate-700 hover:bg-gradient-to-br shadow-md shadow-twilight font-mono rounded-lg text-sm px-5 py-2.5 text-center mx-auto my-2'>Save Changes</button>
 
 
               </form>
