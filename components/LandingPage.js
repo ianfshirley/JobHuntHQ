@@ -3,6 +3,7 @@ import Footer from "./Footer"
 import Image from "next/image"
 import JobHuntHQ from 'public/JobHuntHQ.png'
 import AddJobScreenshot from 'public/AddJobScreenshot.png'
+import JobListScreenshot from 'public/JobListScreenshot.png'
 import placeholder2 from 'public/placeholder2.png'
 
 
@@ -51,8 +52,8 @@ export default function LandingPage() {
         <div className="flex items-center justify-between mx-24 mt-12 mb-24 text-white text-3xl text-center">
           <div className="w-1/2 shadow-2xl shadow-dusk border-2 border-light-mauve rounded-sm">
             <Image
-              src={placeholder2}
-              alt='placeholder image 2'
+              src={JobListScreenshot}
+              alt='Screenshot of Dashboard Page showing Job List and Job Detail for the selected job'
               className="rounded-sm"
             />
           </div>

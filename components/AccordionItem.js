@@ -85,7 +85,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
               }
             </div>
             <div className='flex justify-start text-start items-center col-start-1 col-span-8 ml-16 border-l-2 border-cornflower max-w-fit'>
-              <p className='pl-4 pr-2'>
+              <p className='px-4'>
                 Notes:
               </p>
               <p className='text-dusk font-bold'>
