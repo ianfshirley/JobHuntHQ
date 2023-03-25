@@ -38,21 +38,24 @@ export default function LandingPage() {
           <p className="w-2/5">
             Add job applications to your list to easily keep track of all the jobs you've applied for.
           </p>
-          <div className="w-1/2 bg-beige">
+          <div className="w-1/2 shadow-2xl shadow-dusk border-2 border-light-mauve rounded-sm">
             <Image
               src={AddJobScreenshot}
               alt='Screenshot of the Add Job Form'
+              className="rounded-sm"
             />
           </div>
 
         </div>
 
         <div className="flex items-center justify-between mx-24 mt-12 mb-24 text-white text-3xl text-center">
-          <Image
-            className="w-1/2"
-            src={placeholder2}
-            alt='placeholder image 2'
-          />
+          <div className="w-1/2 shadow-2xl shadow-dusk border-2 border-light-mauve rounded-sm">
+            <Image
+              src={placeholder2}
+              alt='placeholder image 2'
+              className="rounded-sm"
+            />
+          </div>
           <p className="w-2/5">
             View your job list and update the status as you move through the hiring process.
           </p>
