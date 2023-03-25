@@ -73,19 +73,19 @@ export default function AddJobModal(props) {
         toggleModal={props.toggleModal}
         contentLabel="Example Modal"
         ariaHideApp={false}
-        className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'
+        className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none font-montserrat'
       >
 
-        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+        <div className="relative w-auto my-6 mx-auto ">
 
           {/* Modal Content: */}
-          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-cream outline-none focus:outline-none">
 
             {/* Modal Header: */}
-            <div className="text-center p-5 border-b border-solid border-slate-200 rounded-t">
-              <h1 className="text-3xl">Add a Job</h1>
+            <div className="text-center p-5 rounded-t">
+              <h1 className="text-3xl text-twilight font-semibold">Add a Job</h1>
               <button
-                className="absolute px-2 text-lg font-bold text-center transition-all duration-300 border border-white rounded-md top-4 right-4 hover:text-red-500 hover:border-red-500 text-violet-700"
+                className="absolute px-2 text-lg font-bold text-center transition-all duration-300 border border-cream rounded-md top-4 right-4 hover:text-red-500 hover:border-red-500 text-dusk"
                 onClick={props.toggleModal}
               >
                 X
@@ -93,37 +93,37 @@ export default function AddJobModal(props) {
             </div>
 
             {/* Modal Body: */}
-            <div className="relative p-6 flex-auto">
+            <div className="relative m-8 p-2 flex-auto text-dusk rounded-lg bg-cornflower shadow-lg shadow-twilight">
 
               <form
                 onSubmit={handleCreateJob}
-                className="flex  my-16 bg-blue-800/50 border border-blue-900 h-3/4 place-contents-center"
+                className="grid grid-cols-2 grid-rows-6 text-lg font-medium bg-cornflower border-4 border-cream shadow-sm shadow-twilight items-center m-2 p-2"
               >
-                <fieldset className='w-11/12 place-contents-center'>
 
-                  <label className=''>
+
+                  <label className='flex justify-evenly items-center col-start-1 col-span-2 row-start-1 row-span-1'>
                     Job Title
-                    <input type='text' name='title' id='title' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Software Developer' />
+                    <input type='text' name='title' id='title' className='content-center mx-2 my-2 w-2/3 p-0.5' placeholder='ex: Software Developer' />
                   </label>
 
-                  <label className=''>
+                  <label className='flex justify-evenly items-center col-start-1 col-span-2 row-start-2 row-span-1'>
                     Company
-                    <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-6/12 p-0.5' placeholder='ex: Code Fellows' />
+                    <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-2/3 p-0.5' placeholder='ex: Code Fellows' />
                   </label>
 
-                  <label className=''>
+                  <label className='flex whitespace-nowrap justify-center items-center col-span-1 row-start-3 row-span-1 ml-2'>
                     Date Applied
-                    <DatePicker name='date_applied' id='date_applied' showIcon selected={startDate} onChange={(date) => setStartDate(date)} className="pl-2" />
+                    <DatePicker name='date_applied' id='date_applied' showIcon selected={startDate} onChange={(date) => setStartDate(date)} className="ml-4 pl-2" />
                   </label>
 
-                  <label className=''>
+                  <label className='flex justify-center items-center col-start-2 col-span-1 row-start-3 row-span-1'>
                     How did you apply?
                     <select
                     value={selectedValue}
                     onChange={(e) => setSelectedValue(e.target.value)}
                     name='method'
                     id='method'
-                    className='content-center mx-2 my-2 w-6/12 p-0.5'>
+                    className='content-center mx-4 my-2 p-0.5'>
                     <option value='choose' disabled>Choose One</option>
                     <option value="linkedin">LinkedIn</option>
                     <option value="indeed">Indeed</option>
@@ -133,30 +133,30 @@ export default function AddJobModal(props) {
                     </select>
                   </label>
 
-                  <label className=''>
+                  <label className='flex justify-center items-center col-span-1 row-start-4 row-span-1'>
                     Did you write a cover letter?
                     <input
-                      className="ml-1 mr-4"
+                      className="mx-4"
                       type="checkbox"
                       checked={cover_letter}
                       onChange={handleCoverLetterChange}
                     />
                   </label>
 
-                  <label className=''>
+                  <label className='flex justify-center items-center col-start-2 col-span-1 row-start-4 row-span-1'>
                     Did you have a referral?
                     <input
-                      className="ml-1 mr-4"
+                      className="mx-4"
                       type="checkbox"
                       checked={referral}
                       onChange={handleReferralChange}
                     />
                   </label>
 
-                  <label className=''>
+                  <label className='flex justify-evenly items-center col-span-2 row-start-5 row-span-1'>
                     Notes
                     <textarea
-                      className='content-center mx-2 my-2  p-0.5'
+                      className='content-center mx-2 my-2 w-2/3 p-0.5'
                       name='notes'
                       id='notes'
                       rows="1" // start with one row
@@ -164,9 +164,9 @@ export default function AddJobModal(props) {
                     />
                   </label>
 
-                  <button className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-mono rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 m-4'>Add New Application</button>
+                  <button className='col-span-2 row-start-6 row-span-1 text-white bg-gradient-to-r from-dusk via-twilight to-slate-700 hover:bg-gradient-to-br shadow-md shadow-twilight font-mono rounded-lg text-sm px-5 py-2.5 text-center mx-auto'>Add New Application</button>
 
-                </fieldset>
+
               </form>
 
             </div>
