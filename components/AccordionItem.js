@@ -103,13 +103,13 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
               </p>
             </div>
 
-            <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-end items-center px-10'>
+            <div className='col-start-9 col-span-1 row-start-1 row-span-1 flex justify-end items-center pr-10'>
               <FaEdit
                 className='text-cornflower text-2xl cursor-pointer hover:text-mauve'
                 onClick={() => openUpdateModal(job)}
               />
             </div>
-            <div className='col-start-9 col-span-1 row-start-2 row-span-1 flex justify-end items-center px-10'>
+            <div className='col-start-9 col-span-1 row-start-2 row-span-1 flex justify-end items-center pr-10'>
               <FaTrashAlt
                 className='text-cornflower text-2xl cursor-pointer hover:text-mauve'
                 onClick={() => handleDeleteJob()}

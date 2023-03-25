@@ -129,7 +129,7 @@ export default function UpdateJobModal(props) {
 
               <form
                 onSubmit={(e) => handleUpdateJob(props.job.id, e)}
-                className="grid grid-cols-2 grid-rows-8 text-lg font-semibold bg-cornflower border-4 border-cream shadow-sm shadow-twilight items-center m-2 p-2"
+                className="grid grid-cols-2 grid-rows-8 gap-y-3 text-lg font-semibold bg-cornflower border-4 border-cream shadow-sm shadow-twilight items-center m-2 p-2"
               >
 
                 <label className='flex justify-evenly items-center col-start-1 col-span-2 row-start-1 row-span-1'>
@@ -201,10 +201,10 @@ export default function UpdateJobModal(props) {
                 </label>
 
 
-                <div className='flex flex-col col-span-2 row-start-6 row-span-2 content-center text-center bg-cream text-dusk'>
+                <div className='flex flex-col col-span-2 row-start-6 row-span-2 content-center text-center bg-mauve text-cream rounded-full pt-2 px-3 pb-3'>
                   <h3 className='text-xl'>Application Status</h3>
                   <div className="flex flex-wrap justify-evenly">
-                    <label className="h-auto my-2 ml-1 p-2  rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
+                    <label className="h-auto my-2 ml-1 p-2  rounded-lg shadow-xl shadow-slate-900 bg-cornflower text-dusk">
                       First Interview
                       <input
                         className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
@@ -213,7 +213,7 @@ export default function UpdateJobModal(props) {
                         onChange={handleFirstChange}
                       />
                     </label>
-                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
+                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-xl shadow-slate-900 bg-cornflower text-dusk">
                       Second Interview
                       <input
                         className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
@@ -222,7 +222,7 @@ export default function UpdateJobModal(props) {
                         onChange={handleSecondChange}
                       />
                     </label>
-                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
+                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-xl shadow-slate-900 bg-cornflower text-dusk">
                       Third Interview
                       <input
                         className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
@@ -231,7 +231,7 @@ export default function UpdateJobModal(props) {
                         onChange={handleThirdChange}
                       />
                     </label>
-                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
+                    <label className="h-auto my-2 ml-1 p-2 rounded-lg shadow-xl shadow-slate-900 bg-cornflower text-dusk">
                       Rejected &#128546;
                       <input
                         className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
@@ -240,7 +240,7 @@ export default function UpdateJobModal(props) {
                         onChange={handleRejectedChange}
                       />
                     </label>
-                    <label className="h-auto my-2 ml-1 mr-2 p-2  rounded-lg shadow-lg shadow-twilight bg-beige text-cream">
+                    <label className="h-auto my-2 mx-1 p-2  rounded-lg shadow-xl shadow-slate-900 bg-cornflower text-dusk">
                       Offer Received! &#129321;
                       <input
                         className="mx-2 w-4 h-4 bg-cream border-dusk rounded"
