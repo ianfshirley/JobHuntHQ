@@ -73,10 +73,10 @@ export default function AddJobModal(props) {
         toggleModal={props.toggleModal}
         contentLabel="Example Modal"
         ariaHideApp={false}
-        className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none font-montserrat'
+        className='justify-center items-center flex fixed overflow-x-hidden overflow-y-auto inset-0 z-50 outline-none focus:outline-none font-montserrat'
       >
 
-        <div className="relative w-auto my-6 mx-auto ">
+        <div className="relative w-auto mx-auto ">
 
           {/* Modal Content: */}
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-cream outline-none focus:outline-none">
@@ -97,23 +97,23 @@ export default function AddJobModal(props) {
 
               <form
                 onSubmit={handleCreateJob}
-                className="grid grid-cols-2 grid-rows-6 text-lg font-medium bg-cornflower border-4 border-cream shadow-sm shadow-twilight items-center m-2 p-2"
+                className="grid grid-cols-2 grid-rows-6 text-lg font-semibold bg-cornflower border-4 border-cream shadow-sm shadow-twilight items-center m-2 p-2"
               >
 
 
                   <label className='flex justify-evenly items-center col-start-1 col-span-2 row-start-1 row-span-1'>
                     Job Title
-                    <input type='text' name='title' id='title' className='content-center mx-2 my-2 w-2/3 p-0.5' placeholder='ex: Software Developer' />
+                    <input type='text' name='title' id='title' className='content-center m-2 w-2/3 px-2 py-0.5' placeholder='ex: Software Developer' />
                   </label>
 
                   <label className='flex justify-evenly items-center col-start-1 col-span-2 row-start-2 row-span-1'>
                     Company
-                    <input type='text' name='company' id='company' className='content-center mx-2 my-2 w-2/3 p-0.5' placeholder='ex: Code Fellows' />
+                    <input type='text' name='company' id='company' className='content-center m-2 w-2/3 px-2 py-0.5' placeholder='ex: Code Fellows' />
                   </label>
 
-                  <label className='flex whitespace-nowrap justify-center items-center col-span-1 row-start-3 row-span-1 ml-2'>
+                  <label className='flex whitespace-nowrap justify-evenly items-center col-span-1 row-start-3 row-span-1 ml-2'>
                     Date Applied
-                    <DatePicker name='date_applied' id='date_applied' showIcon selected={startDate} onChange={(date) => setStartDate(date)} className="ml-4 pl-2" />
+                    <DatePicker name='date_applied' id='date_applied' showIcon selected={startDate} onChange={(date) => setStartDate(date)} className="ml-4 text-center" />
                   </label>
 
                   <label className='flex justify-center items-center col-start-2 col-span-1 row-start-3 row-span-1'>
@@ -123,7 +123,7 @@ export default function AddJobModal(props) {
                     onChange={(e) => setSelectedValue(e.target.value)}
                     name='method'
                     id='method'
-                    className='content-center mx-4 my-2 p-0.5'>
+                    className='content-center mx-4 my-2 px-2 py-0.5'>
                     <option value='choose' disabled>Choose One</option>
                     <option value="linkedin">LinkedIn</option>
                     <option value="indeed">Indeed</option>
@@ -136,7 +136,7 @@ export default function AddJobModal(props) {
                   <label className='flex justify-center items-center col-span-1 row-start-4 row-span-1'>
                     Did you write a cover letter?
                     <input
-                      className="mx-4"
+                      className="mx-4 w-4 h-4 bg-cream border-dusk rounded"
                       type="checkbox"
                       checked={cover_letter}
                       onChange={handleCoverLetterChange}
@@ -146,7 +146,7 @@ export default function AddJobModal(props) {
                   <label className='flex justify-center items-center col-start-2 col-span-1 row-start-4 row-span-1'>
                     Did you have a referral?
                     <input
-                      className="mx-4"
+                      className="mx-4 w-4 h-4 bg-cream border-dusk rounded"
                       type="checkbox"
                       checked={referral}
                       onChange={handleReferralChange}
