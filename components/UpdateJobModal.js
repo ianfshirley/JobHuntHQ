@@ -11,7 +11,7 @@ export default function UpdateJobModal(props) {
 
   const { updateResource } = useResource();
   const { data: session } = useSession()
-  const [selectedValue, setSelectedValue] = useState('choose');
+  const [selectedValue, setSelectedValue] = useState(props.job.method);
   const user = session.auth_token.user_id;
 
   // Convert the original date to a Date object
@@ -20,10 +20,20 @@ export default function UpdateJobModal(props) {
 
   const [startDate, setStartDate] = useState(date); // Initialize with the parsed date
 
-  // Update startDate state whenever props.job.date_applied changes
   useEffect(() => {
-    setStartDate(parseISO(props.job.date_applied));
-  }, [props.job.date_applied]);
+    if (props.isModalOpen) {
+      setCoverLetter(false);
+      setReferral(false);
+      setStartDate(parseISO(props.job.date_applied));
+      setSelectedValue(props.job.method)
+    }
+  }, [props.isModalOpen, props.job.date_applied, props.job.method]);
+
+  // useEffect(() => {
+
+  //   setStartDate(parseISO(props.job.date_applied));
+  //   setSelectedValue(props.job.method)
+  // }, [props.job.date_applied]);
 
   // Getting the existing true/false values for job status from DB:
   const [cover_letter, setCoverLetter] = useState(props.job.cover_letter);
@@ -146,6 +156,23 @@ export default function UpdateJobModal(props) {
                     showIcon
                     selected={startDate}
                     onChange={(date) => setStartDate(date)} className="ml-4 text-center" />
+                </label>
+
+                <label className='flex justify-center items-center col-start-2 col-span-1 row-start-3 row-span-1'>
+                  How did you apply?
+                  <select
+                    value={selectedValue}
+                    onChange={(e) => setSelectedValue(e.target.value)}
+                    name='method'
+                    id='method'
+                    className='content-center mx-4 my-2 px-2 py-0.5'>
+                    <option value='choose' disabled>Choose One</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="indeed">Indeed</option>
+                    <option value="otta">Otta</option>
+                    <option value="company_website">Company Website</option>
+                    <option value="other">Other</option>
+                  </select>
                 </label>
 
                 <label className='text-white p-1'>
