@@ -67,7 +67,6 @@ export default function AddJobModal(props) {
 
   return (
     <>
-
       <Modal
         isOpen={props.isModalOpen}
         toggleModal={props.toggleModal}
@@ -99,7 +98,6 @@ export default function AddJobModal(props) {
                 onSubmit={handleCreateJob}
                 className="grid grid-cols-2 grid-rows-6 text-lg font-semibold bg-cornflower border-4 border-cream shadow-sm shadow-twilight items-center m-2 p-2"
               >
-
 
                   <label className='flex justify-evenly items-center col-start-1 col-span-2 row-start-1 row-span-1'>
                     Job Title

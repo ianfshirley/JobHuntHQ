@@ -2,11 +2,17 @@ import { GoX, GoChevronDown } from 'react-icons/go';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { Collapse } from 'react-collapse';
 import useResource from '@/hooks/useResource';
+import { format, parseISO } from 'date-fns';
 
 
 export default function AccordionItem({ open, toggleAccordionItem, title, company, date_applied, method, cover_letter, referral, notes, first, second, third, rejected, offer, job, openUpdateModal, toggleModal }) {
 
   const { deleteResource } = useResource();
+
+  // Getting date_applied from DB and converting it to a prettier format:
+  const originalDate = date_applied;
+  const parsedDate = parseISO(originalDate);
+  const formattedDate = format(parsedDate, 'MMMM d, yyyy');
 
   function handleDeleteJob() {
     const confirmed = window.confirm(`Are you sure you want to delete ${title} at ${company}?`)
@@ -45,7 +51,7 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
                 Date Applied:
               </p>
               <p className='text-dusk font-bold'>
-                {date_applied}
+                {formattedDate}
               </p>
             </div>
             <div className='flex justify-start col-start-5 col-end-9 row-span-1 border-l-2 border-cornflower'>
