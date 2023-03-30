@@ -17,6 +17,7 @@ export default function JobList() {
   }
 
   const { resources } = useResource();
+  console.log(resources);
 
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const toggleUpdateModal = () => setIsUpdateModalOpen(!isUpdateModalOpen);
