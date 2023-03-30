@@ -32,31 +32,37 @@ export default function JobList() {
   return (
     <div className='overflow-auto rounded-lg my-8 mx-32 bg-beige shadow-2xl font-montserrat'>
       <h3 className='text-3xl font-semibold text-cream pt-4 pb-2'>Job List</h3>
-      <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream shadow-lg'>
-        {resources && resources.map((job, index) => {
-          return (
-            <AccordionItem
-              key={index}
-              open={index === open}
-              title={job.title}
-              company={job.company}
-              date_applied={job.date_applied}
-              method={job.method_label}
-              cover_letter={job.cover_letter}
-              referral={job.referral}
-              notes={job.notes}
-              first={job.first}
-              second={job.second}
-              third={job.third}
-              rejected={job.rejected}
-              offer={job.offer}
-              job={job}
-              openUpdateModal={openUpdateModal}
-              toggleAccordionItem={() => toggleAccordionItem(index)}
-            />
-          )
-        })}
-      </div>
+      {resources.length > 0 ? (
+        <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream shadow-lg'>
+          {resources.map((job, index) => {
+            return (
+              <AccordionItem
+                key={index}
+                open={index === open}
+                title={job.title}
+                company={job.company}
+                date_applied={job.date_applied}
+                method={job.method_label}
+                cover_letter={job.cover_letter}
+                referral={job.referral}
+                notes={job.notes}
+                first={job.first}
+                second={job.second}
+                third={job.third}
+                rejected={job.rejected}
+                offer={job.offer}
+                job={job}
+                openUpdateModal={openUpdateModal}
+                toggleAccordionItem={() => toggleAccordionItem(index)}
+              />
+            )
+          })}
+        </div>
+      ) : (
+        <p className='text-lg font-semibold text-cream pt-4 pb-2'>
+          You do not currently have any jobs in your database. Please add a job.
+        </p>
+      )}
 
       {selectedJob && (
         <UpdateJobModal
