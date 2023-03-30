@@ -36,7 +36,7 @@ export default function LandingPage() {
 
         <div className="flex items-center justify-between mt-24 mb-12 mx-24 text-white text-3xl text-center">
           <p className="w-2/5">
-            Add job applications to your list to easily keep track of all the jobs you've applied for.
+            Add job applications to your list to easily keep track of all the jobs you&apos;ve applied for.
           </p>
           <Image
               src={AddJob}
