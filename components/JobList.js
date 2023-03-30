@@ -59,7 +59,7 @@ export default function JobList() {
           })}
         </div>
       ) : (
-        <p className='text-lg font-semibold text-cream pt-4 pb-2'>
+        <p className='text-lg font-semibold m-4 rounded-lg bg-cream shadow-lg text-twilight pt-4 pb-2'>
           You do not currently have any jobs in your database. Please add a job.
         </p>
       )}
