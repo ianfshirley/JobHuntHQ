@@ -33,7 +33,7 @@ export default function JobList() {
     <div className='overflow-auto rounded-lg my-8 mx-32 bg-beige shadow-2xl font-montserrat'>
       <h3 className='text-3xl font-semibold text-cream pt-4 pb-2'>Job List</h3>
       {resources && resources.length > 0 ? (
-        <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream shadow-lg shadow-twilight'>
+        <div className='grid grid-cols-1 divide-y-2 divide-dusk m-4 rounded-lg bg-cream shadow-md shadow-twilight'>
           {resources.map((job, index) => {
             return (
               <AccordionItem
@@ -59,7 +59,7 @@ export default function JobList() {
           })}
         </div>
       ) : (
-        <p className='text-lg font-semibold m-4 rounded-lg bg-cream shadow-lg shadow-twilight text-twilight p-4'>
+        <p className='text-lg font-semibold m-4 rounded-lg bg-cream shadow-md shadow-twilight text-twilight p-4'>
           You do not currently have any jobs in your database. Please add a job.
         </p>
       )}
