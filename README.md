@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" src="./public/JobHuntHQ-blue.png">
+  <img width="400" src="./public/JobHuntHQ-blue.png">
 </p>
 
 Welcome to JobHuntHQ, your one-stop solution to managing and organizing your job search journey. This application is designed to help users keep track of their job applications in a simple, efficient, and user-friendly manner.
