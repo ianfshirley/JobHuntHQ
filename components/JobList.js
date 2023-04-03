@@ -23,8 +23,7 @@ export default function JobList() {
 
   const { resources } = useResource();
   console.log(resources);
-  const userResources = resources?.filter((job) => job.user === user)
-  console.log(userResources)
+  const userResources = Array.isArray(resources) ? resources.filter((job) => job.user === user) : [];
 
 
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
