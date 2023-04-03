@@ -19,9 +19,6 @@ export default function AccordionItem({ open, toggleAccordionItem, title, compan
 
     if (confirmed) {
       deleteResource(job.id);
-      console.log('Job deleted');
-    } else {
-      console.log('Job not deleted');
     }
   }
 

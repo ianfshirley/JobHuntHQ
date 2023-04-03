@@ -66,7 +66,6 @@ export default function UpdateJobModal(props) {
 
     updateResource(id, info);
     props.toggleModal();
-    console.log(info)
   }
 
   function handleCoverLetterChange(e) {

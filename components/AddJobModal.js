@@ -40,8 +40,6 @@ export default function AddJobModal(props) {
     const parsedDateArr = originalDate.split('/');
     const parsedDate = `${parsedDateArr[2]}-${parsedDateArr[0]}-${parsedDateArr[1]}`;
 
-    console.log(originalDate)
-
     const info = {
       title: e.target.title.value,
       company: e.target.company.value,
@@ -58,7 +56,6 @@ export default function AddJobModal(props) {
       user: user,
     };
     createResource(info);
-    console.log(info);
     props.toggleModal();
 
   }
